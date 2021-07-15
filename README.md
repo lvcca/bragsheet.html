@@ -19,3 +19,5 @@ With feedback, the export format can be adjusted to more accurately reflect the 
 <li>Record.txt : JSON file with persistent data. <- <b>Upload this file</b></li>
 <li>Bragsheet.txt : Formatted txt file with stored data.</li>
 </ul>
+
+![image](https://user-images.githubusercontent.com/49540886/125867349-a15bd9bb-ef1a-41c6-bfc2-24a8173e534d.png)
