@@ -562,8 +562,8 @@
 							document.getElementById('end_month').value = ij.endDate.month;
 							document.getElementById('end_year').value = ij.endDate.year;							
 							
-							document.getElementById('impact').selectedIndex = impact[ij.impact];
-							document.getElementById('category').selectedIndex = categories[ij.Category];
+							document.getElementById('impact').selectedIndex = impact.indexOf(ij.impact);
+							document.getElementById('category').selectedIndex = categories.indexOf(ij.Category);
 							document.getElementById('content_pane').value = ij.Content;
 
 							create_record();
@@ -841,4 +841,3 @@
 		</div>
 	</body>
 </html>
-
