@@ -1,0 +1,844 @@
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>bragsheet.html</title>
+	</head>
+
+	<body style="background-color:#868b8f;border-radius: 25px;">
+	<style>
+
+		div.title {
+			text-align: Center;
+		}
+
+		div.title1 {
+			color:#0d2d4d; 
+		}
+
+		div.title1:hover {
+			background-color: #235d91;
+			color: white;
+			box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+			box-shadow: 0 5px #777;
+		  	transform: translateY(4px);
+		}
+
+		/**
+		 * START CSS table
+		 * */
+		#record_table {
+		  font-weight: bold;
+		  border: 3px solid #ddd;
+		  font-family: 'Roboto', sans-serif;
+		  border-collapse: collapse;
+		  width: 100%;
+		  margin-left: auto; 
+  	      margin-right: auto;
+  	      padding-top: 12px;
+		  padding-bottom: 12px;
+		}
+
+		#record_table td, #record_table th {
+		  border: 3px solid #ddd;
+		  padding: 10px;
+		}
+
+		#record_table tr:nth-child(even){
+			background-color: #b3b3b3; 
+			font-family: 'Roboto', sans-serif; 
+			border: 3px solid #ddd;
+		}
+
+		#record_table tr:hover {
+			background-color: #9ec3db; 
+			font-family: 'Roboto', sans-serif; 
+			padding-top: 24px;
+			padding-bottom: 24px;
+			border: 10px solid navajowhite;
+			box-shadow: 0 12px 16px 0 rgba(0,0,0,0.99), 0 17px 50px 0 rgba(0,0,0,0.99);
+		}
+
+		#record_table th {
+		  border: 3px solid #ddd;
+		  letter-spacing: 3px;
+		  padding-top: 12px;
+		  padding-bottom: 12px;
+		  text-align: Center;
+		  background-color: #3a6791;
+		  color: white;
+		}
+		/**
+		 * END CSS table
+		 **/
+
+		/**
+		 * START Buttons
+		 * */
+		button {
+		  font-weight: bold;
+		  border-radius: 25px;
+		  font-family: 'Roboto', sans-serif;
+		  background-color: #4CAF50; 
+		  border: none;
+		  color: white;
+		  padding: 12px 28px;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		  font-size: 12px;
+		  margin: 4px 2px;
+		  transition-duration: 0.4s;
+		  cursor: pointer;
+		  font-size: large;
+		  letter-spacing: 3px;
+		}
+
+		.button:active {
+		  background-color: #1b212e;
+		  box-shadow: 0 5px #777;
+		  transform: translateY(4px);
+		}
+
+		.button1 {
+		  background-color: white; 
+		  color: black; 
+		  border: 2px solid #3a6791;
+		}
+
+		.button1:hover {
+		  background-color: #235d91;
+		  color: white;
+		  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.75), 0 17px 50px 0 rgba(0,0,0,0.35);
+		}
+
+		.button2 {
+		  border-radius: 25px;
+		  background-color: #3a6791; 
+		  color: white; 
+		  border: 2px solid #3a6791;
+		  padding: 8px 20px;
+		}
+
+		.button2:hover {
+			background-color: navajowhite;
+		  	color: #3a6791;
+  			box-shadow: 0 12px 16px 0 rgba(0,0,0,0.50), 0 17px 50px 0 rgba(0,0,0,0.28);
+		}
+
+		.button3 {
+		  border-radius: 25px;
+		  background-color: darkorange; 
+		  color: darkgreen; 
+		  border: 2px solid #3a6791;
+		  padding: 8px 20px;
+		}
+
+		.button3:hover {
+			background-color: darkgreen;
+		  	color: darkorange;
+  			box-shadow: 0 12px 16px 0 rgba(0,0,0,0.99), 0 17px 50px 0 rgba(0,0,0,0.88);
+		}
+
+		/**
+		 * END Buttons
+		 * */
+
+		 select {
+		 	font-weight: bold;
+		 	background-color: navajowhite;
+		 	position: relative;
+  			font-family: Arial;
+  			transition-duration: 0.4s;
+  			border-radius: 15px;
+  			border: 2px solid #0b3852;
+		 }
+
+		 .select:hover {
+		 	background-color: #235d91;
+		  	color: white;
+		  	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.99), 0 17px 50px 0 rgba(0,0,0,0.88);
+		 }
+
+		 .select:active {
+		  	background-color: #1b212e;
+		  	box-shadow: 0 5px #777;
+		  	transform: translateY(4px);
+		}
+
+		.iconify {
+			border-radius: 25px;
+			font-family: 'Roboto', sans-serif;
+			background-color: #0b3852; 
+			border: none;
+			color: white;
+			padding: 6px 10px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 12px;
+			margin: 4px 2px;
+			transition-duration: 0.4s;
+			cursor: pointer;
+			font-size: large;
+			letter-spacing: 3px;
+		}
+
+		.iconify:active {
+		    background-color: #1b212e;
+		    box-shadow: 0 5px #777;
+		    transform: translateY(4px);
+		}
+
+		.iconify:hover {
+		 	background-color: #235d91;
+		  	color: white;
+		  	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+		 }
+
+		 textarea {
+		 	font-size: large;
+		 	caret-color: red;
+		 	caret-shape: block;
+		 }
+
+		 textarea:hover {
+		 	font-weight: bold;
+		 	background-color: #e4e9f0;
+		 	box-shadow: 0 5px #777;
+		 	transform: translateY(4px);
+		 	padding: 12px 24px;
+		 	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.99), 0 17px 50px 0 rgba(0,0,0,0.99);
+		}
+		 textarea:active {
+		 	color: navajowhite;
+		 	background-color: #1b212e;
+		 	border-radius: 15px;
+  			border: 2px solid #0b3852;
+		}
+
+	</style>
+
+	<div class='title title1'>
+		<h1 style="font-family: 'Roboto', sans-serif; letter-spacing: 3px;">bragsheet.html</h1>
+	</div>
+	<div class='title'>
+	<p>
+		<center>
+			<input class='button button2' type='file' id='import_record' name='import_Record'></input>
+			<button class ='button button3' onclick='import_record()' style='letter-spacing: 3px;' id='import_button'>import</button>
+		</center>
+	</p>
+	<p style="font-family: 'Roboto', sans-serif; color:#1d456e; letter-spacing: 3px; text-transform: lowercase; font-size: large;"><b>Start Date</b>
+			<select class='select' id="start_day" style='border-radius: 25px; padding: 8px 16px; font-size: large;'></select>
+			<select id="start_month" class='select' style='border-radius: 25px; padding: 8px 16px; font-size: large;'></select>
+			<select id="start_year" class='select' style='border-radius: 25px; padding: 8px 16px; font-size: large;'></select>
+			<button class='button button2' onclick="set_today('start_')">reset</button>
+	</p>
+
+	<p style="font-family: 'Roboto', sans-serif; color:#1d456e; letter-spacing: 3px; text-transform: lowercase; font-size: large;"><b>End Date</b>
+		<select id="end_day" class='select' style='border-radius: 25px; padding: 8px 16px; font-size: large;'></select>
+		<select id="end_month" class='select' style='border-radius: 25px; padding: 8px 16px; font-size: large;'></select>
+		<select id="end_year" class='select' style='border-radius: 25px; padding: 8px 16px; font-size: large;'></select>
+		<button class='button button2' onclick="set_today('end_')">reset</button>
+	</p> 
+	
+	<p style="font-family: 'Roboto', sans-serif; color:#1d456e; letter-spacing: 3px; text-transform: lowercase; font-size: large;"><b>Category</b>
+		<select id="category" class='select' style='border-radius: 25px; padding: 8px 16px; font-size: large; letter-spacing: 3px;'>Category</select>
+	</p>
+
+	<p style="font-family: 'Roboto', sans-serif; color:#1d456e; letter-spacing: 3px; text-transform: lowercase; font-size: large;"><b>Impact</b>
+		<select id="impact" class='select' style='border-radius: 25px; padding: 8px 16px; font-size: large; letter-spacing: 3px;'>Impact</select>
+	</p>
+
+	<textarea style="font-family: 'Times New Roman', Times, serif; font-size:24px; border-radius: 25px; text-align: justify; text-align-last: center;" id="content_pane" rows="8" cols="70" class='textarea'>Record entry.</textarea>
+
+	<p style="font-family: 'Roboto', sans-serif">
+		<button class ='button button1' onclick='create_record();' style='letter-spacing: 3px;'>Create Record</button>
+		<button class ='button button1' id='export_record' onclick='download("record.txt", for_download_record())' href="" style='letter-spacing: 3px;'>Export Record</button>
+		<button class ='button button1' id='export_record' onclick='download("bragsheet.txt", for_download_bragsheet("Category"))' href="" style='letter-spacing: 3px;'>Export Bragsheet</button>
+	</p>
+
+	<p>
+		<table id='record_table'>
+			<tr>
+			   <th>Start Date</th>
+			   <th>End Date</th>
+			   <th>Category</th>
+			   <th>Impact</th>
+			   <th>Content</th>
+			   <th>Edit</th>
+		   </tr>
+		</table>
+	</p>
+
+		<script>
+			//global lists
+			var categories = ['Duties and Responsibilities', 'Job Accomplishments & Initiative', 'Supervision and Leadership', 'Special Achievements', 'Off-Duty Activities', 'Collateral Duties', 'Education (Navy, Personal)', 'Qualifications'];
+			
+			var impact = ['Low', 'Medium', 'High'];
+
+			var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+			var years = [];
+			for (let i = 1900; i <= new Date().getFullYear(); i++){years.push(i);}
+			
+			//list of entry containers
+			var records = []
+			var json_rec = []
+
+			var total_rows = 0;
+
+			var file;
+			var fr = new FileReader();
+
+			//start classes
+			//record container
+			class record
+			{
+				constructor ()
+				{
+					let id = null;
+					let startDate = null;
+					let endDate = null;
+					let impact = null;
+					let cat = null;
+					let content = null;
+				}
+			}
+
+			//start functions
+			function pop_impact()
+			{
+				var select = document.getElementById("impact");
+				populate_date(impact, "impact")
+			}
+
+			function pop_category()
+			{
+				var select = document.getElementById("category");
+				populate_date(categories, "category")
+			}
+
+			function pop_date(pre)
+			{
+				//set days
+				var select = document.getElementById(pre + "day"); 
+				var options = [];
+				for (let i = 1; i < 32; i++){options.push(i);} 
+				populate_date(options, pre + "day")
+				//set month
+				var select = document.getElementById(pre + "month");
+				populate_date(months, pre + "month");
+				//set year
+				var select = document.getElementById(pre + "year");
+				populate_date(years, pre + "year");
+			}
+
+			function populate_date(options, element_id)
+			{
+			    for (let i = 0; i < options.length; i++) 
+			    {
+			        let opt = options[i];
+			        var el = document.createElement("OPTION");
+			        el.setAttribute("value", opt);
+			        var t = document.createTextNode(opt);
+			        el.appendChild(t);
+			        document.getElementById(element_id).appendChild(el);
+			    }
+			}
+
+			function get_date(pre)
+			{
+				var day = document.getElementById(pre + 'day');
+				var month = document.getElementById(pre + 'month');
+				var year = document.getElementById(pre + 'year');
+
+				const date_rec = {"day" : day.value, "month" : month.value, "year" : year.value};
+				
+				return date_rec; 
+			}
+
+			function set_today(pre)
+			{
+				day = document.getElementById(pre+'day');
+				month = document.getElementById(pre+'month');
+				year = document.getElementById(pre+'year');
+				
+				date = new Date();
+				
+				day.selectedIndex = (date.getDate() - 1);
+				month.selectedIndex = date.getMonth();
+				year.selectedIndex = date.getYear();
+			}
+
+			function create_record()
+			{
+				//get content from text-area
+				let content = document.getElementById('content_pane').value;
+
+				//if content default, fail; else create record
+				if (content == 'Record entry.')
+				{
+					window.alert("Content cannot be default.");
+					return;
+				}
+
+				if (content == '')
+				{
+					window.alert("Content cannot be empty.");
+					return;
+				}
+
+				//cont. get values
+				let start_date = get_date('start_');
+				let end_date = get_date('end_');
+				let imp = impact[document.getElementById('impact').selectedIndex];
+				let cat = categories[document.getElementById('category').selectedIndex];
+
+				//initialize record
+				let rec = new record();
+				//assign record values
+				rec.content = content;
+				rec.impact = imp;
+				rec.startDate = start_date;
+				rec.endDate = end_date;
+				rec.cat = cat;
+
+				//assign ID for later use
+				rec.id = getRandomInt(100000);
+				//put into records list
+				records.push(rec);
+
+				//add to table, maintain total table rows number
+				let table = document.getElementById('record_table');
+				total_rows++;
+				let row = table.insertRow(total_rows);
+				row.setAttribute('style', 'color:#000000');
+				row.setAttribute('font-family', 'Roboto, sans-serif');
+				
+				/**
+				Start Date - cell1
+			   	End Date - cell2 
+			   	Category - cell3
+			   	Impact - cell4
+			   	Content - cell5
+			   	Delete Box - cell6
+			   	**/
+
+				var cell1 = row.insertCell(0);
+  				var cell2 = row.insertCell(1);
+  				var cell3 = row.insertCell(2);
+  				var cell4 = row.insertCell(3);
+  				var cell5 = row.insertCell(4);
+
+  				let num = rec.id;
+
+  				var x = document.createElement('INPUT');
+  				x.setAttribute("type", "button");
+  				x.setAttribute("id", num);
+  				x.setAttribute("onclick", ('remove_entry(' + num + ')'));
+  				x.setAttribute("style", "border: 1px solid black;");
+  				x.setAttribute('class', 'iconify');
+  				x.setAttribute('data-icon','mdi-trash-can');
+  				x.setAttribute('data-inline','false');
+  				var cell6 = row.appendChild(x);
+
+  				var y = document.createElement('INPUT');
+  				y.setAttribute("type", "button");
+  				y.setAttribute('class', "iconify");
+  				y.setAttribute("onclick", ('edit_entry(' + num + ')'));
+  				y.setAttribute('data-icon','codicon-edit');
+  				y.setAttribute("style", "border: 1px solid black;");
+  				y.setAttribute('data-inline','false');
+  				var cell6 = row.appendChild(y);
+
+  				row.accessKey = rec.id;
+
+  				cell1.innerHTML = rec.startDate.day + rec.startDate.month + rec.startDate.year;
+  				cell2.innerHTML = rec.endDate.day + rec.endDate.month + rec.endDate.year;
+  				cell3.innerHTML = rec.cat;
+  				cell4.innerHTML = rec.impact;
+  				cell5.innerHTML = rec.content;
+
+
+  				//cell1.setAttribute('contenteditable', 'true');
+  				//cell2.setAttribute('contenteditable', 'true');
+  				//cell3.setAttribute('contenteditable', 'true');
+  				//cell4.setAttribute('contenteditable', 'true');
+  				//cell5.setAttribute('contenteditable', 'true');
+
+  				document.getElementById('content_pane').value = "";
+  				pop_json_rec();
+
+			}
+
+			function remove_entry(record_id)
+			{
+				for (let i = 0; i < document.getElementById('record_table').rows.length; i++)
+				{
+					if (document.getElementById('record_table').rows[i].accessKey == record_id)
+					{
+						document.getElementById('record_table').deleteRow(i);
+						records.pop(record_id);
+						json_rec.splice(json_rec.indexOf(rec_), 1);
+						total_rows--;		
+					}
+				}
+			}
+
+			function getRandomInt(n) 
+			{
+
+ 				let output = Math.floor(Math.random() * n);
+
+ 				if (records.length < 1)
+ 				{
+ 					return output;
+ 				}
+
+ 				try
+ 				{
+	 				for (let i = 0; i <= records.length; i++)
+	 				{
+	 					if (records[i].id == output)
+	 					{
+	 						return getRandomInt(n);
+	 					}
+	 					
+	 					else
+	 					{
+	 						return output;
+	 					}
+	 				}
+ 				}
+
+ 				catch (err)
+ 				{
+ 					console.log(err)
+ 				}			
+			}
+
+			function import_record()
+			{
+				
+				if (document.getElementById('import_record').files[0]){
+
+					this.file = document.getElementById('import_record').files[0];
+					this.fr = new FileReader();
+					fr.readAsText(file, 'utf-8');
+					fr.onloadend = function ()
+					{	
+						//console.log(fr.result);
+
+						var imported_json = JSON.parse(fr.result);
+						var size = Object.keys(imported_json).length;
+						
+						console.log(imported_json)
+
+						let tmp_start_day = document.getElementById('start_day').value;
+						let tmp_start_month = document.getElementById('start_month').value;
+						let tmp_start_year = document.getElementById('start_year').value;
+						let tmp_end_day = document.getElementById('end_day').value;
+						let tmp_end_month = document.getElementById('end_month').value;
+						let tmp_end_year = document.getElementById('end_year').value;
+						let tmp_impact = document.getElementById('impact').selectedIndex;
+						let tmp_category = document.getElementById('category').selectedIndex;
+						let tmp_content = document.getElementById('content_pane').value;
+
+						for (let j = 0; j < size; j++)
+						{
+							let id = Object.keys(imported_json)[j];
+
+							let rec = imported_json[j];
+							let ij = rec[Object.keys(imported_json[j])]
+
+							document.getElementById('start_day').value = ij.startDate.day;
+							document.getElementById('start_month').value = ij.startDate.month;
+							document.getElementById('start_year').value = ij.startDate.year;
+
+							document.getElementById('end_day').value = ij.endDate.day;
+							document.getElementById('end_month').value = ij.endDate.month;
+							document.getElementById('end_year').value = ij.endDate.year;							
+							
+							document.getElementById('impact').selectedIndex = impact[ij.impact];
+							document.getElementById('category').selectedIndex = categories[ij.Category];
+							document.getElementById('content_pane').value = ij.Content;
+
+							create_record();
+						}
+
+						document.getElementById('start_day').value = tmp_start_day;
+						document.getElementById('start_month').value = tmp_start_month;
+						document.getElementById('start_year').value = tmp_start_year;
+						
+						document.getElementById('end_day').value = tmp_end_day;
+						document.getElementById('end_month').value = tmp_end_month;
+						document.getElementById('end_year').value = tmp_end_year;
+
+						document.getElementById('impact').selectedIndex = tmp_impact;
+						document.getElementById('category').selectedIndex = tmp_category;
+						document.getElementById('content_pane').value = tmp_content;						
+					}
+				}
+				else window.alert('Must include a valid bragsheet.json file');
+			}
+
+			function change_button_color(button, color)
+			{
+				if (document.getElementById(button))
+				{
+					document.getElementById(button).setAttribute('style', 'background-color:'+color);	
+				}
+			}
+
+			function pop_json_rec()
+			{	
+				//populate json record list from internal record
+				//prepare to export in JSON format
+				var text_out = "";
+
+					for (let i = 0; i < records.length; i++)
+					{
+						text_out += 
+							`						{	\"${records[i].id}\" : 
+							{
+								\"startDate\" : { \"day\" : \"${records[i].startDate.day}\", \"month\" : \"${records[i].startDate.month}\", \"year\" : \"${records[i].startDate.year}\" },
+								\"endDate\" : { \"day\" : \"${records[i].endDate.day}\", \"month\" : \"${records[i].endDate.month}\", \"year\" : \"${records[i].endDate.year}\" },
+								\"impact\" : \"${records[i].impact}\",
+								\"Category\" : \"${records[i].cat}\",
+								\"Content\" : \"${records[i].content}\"
+							}
+						}`
+
+						let obj = JSON.parse(text_out);
+						json_rec.push(obj);
+						records.pop(i);
+						console.log(text_out);
+
+						text_out = "";
+					}
+			}
+
+		function download(filename, text) 
+		{
+		    var element = document.createElement('a');
+		    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+		    element.setAttribute('download', filename);
+
+		    element.style.display = 'none';
+		    document.body.appendChild(element);
+
+		    element.click();
+
+		    document.body.removeChild(element);
+		}
+
+		function for_download_record()
+		{
+			string_output = '';
+			string_output = JSON.stringify(json_rec);
+			console.log(string_output);
+			return this.string_output;
+		}
+
+		function for_download_bragsheet(printby)
+		{
+			var tmp_0 = categories[0] + '\n';
+			var tmp_1 = categories[1] + '\n'; 
+			var tmp_2 = categories[2] + '\n'; 
+			var tmp_3 = categories[3] + '\n';
+			var tmp_4 = categories[4] + '\n';
+			var tmp_5 = categories[5] + '\n'; 
+			var tmp_6 = categories[6] + '\n'; 
+			var tmp_7 = categories[7] + '\n';
+
+			let string_output = 
+			`Administrative Data:
+
+	a. Full Name :
+	b. Rate and warfare/qualification designators :
+	c. SSN :
+	d. Branch :
+	e. Date Reported :
+	f. Ending date of last evaluation :
+	g. Date of rate :
+			`;
+			string_output += '\n'
+
+			/**
+			 * Assort by categories
+			 * */
+
+			if (printby == 'Category'){
+
+				var tmp_str = ''
+
+				for (let i = 0; i < json_rec.length; i++)
+				{
+				
+					let id = Object.keys(json_rec[i]);
+					let rec_ = json_rec[i];
+					let rec = rec_[id]
+
+					if (categories.indexOf(rec.Category) != -1)
+					{
+
+						if (categories.indexOf(rec.Category) == 0)
+						{
+							//Duties and Responsibilities
+							tmp_0 += `\t[${rec.startDate.day}${rec.startDate.month}${rec.startDate.year} - ${rec.endDate.day}${rec.endDate.month}${rec.endDate.year}]
+\t\t${rec.Content}
+							`;
+
+							tmp_0 += '\n'
+						}
+
+						if (categories.indexOf(rec.Category) == 1)
+						{
+							//Job Accomplishments and Initiative
+							tmp_1 += `\t[${rec.startDate.day}${rec.startDate.month}${rec.startDate.year} - ${rec.endDate.day}${rec.endDate.month}${rec.endDate.year}]
+\t\t${rec.Content}
+							`;
+
+							tmp_1 += '\n'
+						}
+
+						if (categories.indexOf(rec.Category) == 2)
+						{
+							//Supervision and Leadership
+							tmp_2 += `\t[${rec.startDate.day}${rec.startDate.month}${rec.startDate.year} - ${rec.endDate.day}${rec.endDate.month}${rec.endDate.year}]
+\t\t${rec.Content}
+							`;
+
+							tmp_2 += '\n'
+						}
+
+						if (categories.indexOf(rec.Category) == 3)
+						{
+							//Special Achievements
+							tmp_3 += `\t[${rec.startDate.day}${rec.startDate.month}${rec.startDate.year} - ${rec.endDate.day}${rec.endDate.month}${rec.endDate.year}]
+\t\t${rec.Content}
+							`;
+
+							tmp_3 += '\n'
+						}
+
+						if (categories.indexOf(rec.Category) == 4)
+						{
+							//Off-Duty Activities
+							tmp_4 += `\t[${rec.startDate.day}${rec.startDate.month}${rec.startDate.year} - ${rec.endDate.day}${rec.endDate.month}${rec.endDate.year}]
+\t\t${rec.Content}
+							`;
+
+							tmp_4 += '\n'
+						}
+
+						if (categories.indexOf(rec.Category) == 5)
+						{
+							//Collateral Duties
+							tmp_5 += `\t[${rec.startDate.day}${rec.startDate.month}${rec.startDate.year} - ${rec.endDate.day}${rec.endDate.month}${rec.endDate.year}]
+\t\t${rec.Content}
+							`;
+
+							tmp_5 += '\n'
+						}
+
+						if (categories.indexOf(rec.Category) == 6)
+						{
+							//Education (Navy, Personal)
+							tmp_6 += `\t[${rec.startDate.day}${rec.startDate.month}${rec.startDate.year} - ${rec.endDate.day}${rec.endDate.month}${rec.endDate.year}]
+\t\t${rec.Content}
+							`;
+
+							tmp_6 += '\n'
+						}
+
+						if (categories.indexOf(rec.Category) == 7)
+						{
+							//Qualifications
+							tmp_7 += `\t[${rec.startDate.day}${rec.startDate.month}${rec.startDate.year} - ${rec.endDate.day}${rec.endDate.month}${rec.endDate.year}]
+\t\t${rec.Content}
+							`;
+
+							tmp_7 += '\n'
+						}	
+					}  
+				}
+
+				/**
+				 * Place all organized output into single string
+				 * */
+
+				tmp_str += tmp_0;
+				tmp_str += tmp_1;
+				tmp_str += tmp_2;
+				tmp_str += tmp_3;
+				tmp_str += tmp_4;
+				tmp_str += tmp_5;
+				tmp_str += tmp_6;
+				tmp_str += tmp_7;
+				string_output += tmp_str;
+			}
+
+			return string_output;
+		}
+
+		function edit_entry(record_id)
+		{
+			for (let i = 0; i <= document.getElementById('record_table').rows.length; i++)
+			{
+				if (document.getElementById('record_table').rows[i].accessKey == record_id)
+				{	
+					console.log(`index is : ${i-1}\nrecord_id is : ${record_id}`);
+
+					//get record with array number and id
+					var rec_ = json_rec[(i-1)];
+					var rec = rec_[record_id];
+					
+					//populate values with record
+					document.getElementById('start_day').value = rec.startDate.day;
+					document.getElementById('start_month').value = rec.startDate.month;
+					document.getElementById('start_year').value = rec.startDate.year;
+					document.getElementById('end_day').value = rec.endDate.day;
+					document.getElementById('end_month').value = rec.endDate.month;
+					document.getElementById('end_year').value = rec.endDate.year;
+					document.getElementById('impact').selectedIndex = impact[rec.impact];
+					document.getElementById('category').selectedIndex = categories.indexOf(rec.Category);
+					document.getElementById('content_pane').value = rec.Content;
+
+					//remove record from table and lists;
+					document.getElementById('record_table').deleteRow(i);
+					records.pop(record_id);
+					json_rec.splice(json_rec.indexOf(rec_), 1);
+					total_rows--;
+
+					rec_ = null;
+					rec = null;
+
+					return;
+				}
+			}
+
+			return;
+		}
+
+				
+			//end function def
+
+			pop_date("start_");
+			pop_date("end_");
+			pop_impact();
+			pop_category();
+			set_today('start_');
+			set_today('end_');
+			
+			</script>
+
+			<script src="https://code.iconify.design/1/1.0.7/iconify.min.js" crossorigin='anonymous'></script>
+
+		</div>
+	</body>
+</html>
+
