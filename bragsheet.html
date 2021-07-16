@@ -493,32 +493,42 @@
 			function getRandomInt(n) 
 			{
 
- 				let output = Math.floor(Math.random() * n);
+				let output = null;
+				var rec_id = null;
 
- 				if (records.length < 1)
+ 				output = Math.floor(Math.random() * n);
+
+ 				if (json_rec.length < 1)
  				{
  					return output;
  				}
 
  				try
  				{
-	 				for (let i = 0; i <= records.length; i++)
-	 				{
-	 					if (records[i].id == output)
+	 				for (let i = 0; i < json_rec.length; i++)
+	 				{	
+	 					rec_id = Object.keys(json_rec[i]);
+	 					
+	 					if (String(rec_id) == output)
 	 					{
 	 						return getRandomInt(n);
 	 					}
 	 					
 	 					else
 	 					{
-	 						return output;
+	 						continue;
 	 					}
 	 				}
  				}
 
- 				catch (err)
+ 				catch (Exception)
  				{
- 					console.log(err)
+ 					console.log(Exception);
+ 				}
+
+ 				finally 
+ 				{
+ 					return output;
  				}			
 			}
 
