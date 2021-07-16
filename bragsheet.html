@@ -481,6 +481,7 @@
 				{
 					if (document.getElementById('record_table').rows[i].accessKey == record_id)
 					{
+						var rec_ = json_rec[(i-1)];
 						document.getElementById('record_table').deleteRow(i);
 						records.pop(record_id);
 						json_rec.splice(json_rec.indexOf(rec_), 1);
