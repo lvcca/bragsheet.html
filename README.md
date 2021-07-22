@@ -20,4 +20,5 @@ With feedback, the export format can be adjusted to more accurately reflect the 
 <li>Bragsheet.txt : Formatted txt file with stored data.</li>
 </ul>
 
-![image](https://user-images.githubusercontent.com/49540886/125867349-a15bd9bb-ef1a-41c6-bfc2-24a8173e534d.png)
+![image](https://user-images.githubusercontent.com/49540886/126706467-2d2f7525-3795-4aaf-9a61-42133ec9d4b3.png)
+
