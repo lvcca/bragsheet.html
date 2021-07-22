@@ -6,7 +6,7 @@
 		<title>bragsheet.html</title>
 	</head>
 
-	<body style="background-color:#868b8f;border-radius: 25px;">
+	<body style="background-color:#bac0cc;border-radius: 25px;">
 	<style>
 
 		div.title {
@@ -47,13 +47,12 @@
 
 		#record_table tr:nth-child(even){
 			background-color: #b3b3b3; 
-			font-family: 'Roboto', sans-serif; 
 			border: 3px solid #ddd;
 		}
 
 		#record_table tr:hover {
-			background-color: #9ec3db; 
-			font-family: 'Roboto', sans-serif; 
+			border-radius: 25px;
+			background-color: #9ec3db;  
 			padding-top: 24px;
 			padding-bottom: 24px;
 			border: 10px solid navajowhite;
@@ -77,6 +76,7 @@
 		 * START Buttons
 		 * */
 		button {
+		  border: 2px solid #3a6791;
 		  font-weight: bold;
 		  border-radius: 25px;
 		  font-family: 'Roboto', sans-serif;
@@ -226,6 +226,7 @@
 		 	transform: translateY(4px);
 		 	padding: 12px 24px;
 		 	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.99), 0 17px 50px 0 rgba(0,0,0,0.99);
+
 		}
 		 textarea:active {
 		 	color: navajowhite;
@@ -233,6 +234,44 @@
 		 	border-radius: 15px;
   			border: 2px solid #0b3852;
 		}
+		
+		.column {
+		  	float: left;
+		  	padding: 0 0px;
+		}
+
+		.row {
+			width: 50%;
+			margin:0 auto;
+		}
+
+		
+		.row:after {
+		  	content: "";
+		  	display: table;
+		  	clear: both;
+		}
+
+		
+		.card {
+			font-family: 'Roboto', sans-serif;
+			font-weight: bold;
+		  	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		  	padding: 8px 51px 8px 51px;
+		  	background-color: #3a6791;
+		  	color: navajowhite;
+		}
+
+		.card:hover {
+			border-radius: 50px;
+			font-size:18px;
+		  	background-color: #5e6d80;
+		  	color: white;
+		  	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.99), 0 17px 50px 0 rgba(0,0,0,0.99);
+		  	border: 2px solid navajowhite;
+		}
+
+		.fa {font-size:50px;}
 
 	</style>
 
@@ -275,6 +314,75 @@
 		<button class ='button button1' onclick='create_record();' style='letter-spacing: 3px;'>Create Record</button>
 		<button class ='button button1' id='export_record' onclick='download("record.txt", for_download_record())' href="" style='letter-spacing: 3px;'>Export Record</button>
 		<button class ='button button1' id='export_record' onclick='download("bragsheet.txt", for_download_bragsheet("Category"))' href="" style='letter-spacing: 3px;'>Export Bragsheet</button>
+	</p>
+
+	<p>
+	<div class="row">
+  		<div class="column">
+    		<div class="card">
+      			<p><i class="fa fa-briefcase"></i></p>
+      			<h3 id="counter_0">0</h3>
+      			
+    		</div>
+  		</div>
+
+	  	<div class="column">
+	    	<div class="card">
+	      		<p><i class="fa fa-certificate"></i></p>
+	      		<h3 id="counter_1">0</h3>
+	      		
+	    	</div>
+	  	</div>
+  
+	  	<div class="column">
+	    	<div class="card">
+		      	<p><i class="fa fa-users"></i></p>
+		      	<h3 id="counter_2">0</h3>
+		      	
+	    	</div>
+	  	</div>
+  
+	    <div class="column">
+	    	<div class="card">
+			    <p><i class="fa fa-trophy"></i></p>
+			    <h3 id="counter_3">0</h3>
+			    
+	    	</div>
+	  	</div>
+	  
+	    <div class="column">
+	    	<div class="card">
+	      		<p><i class="fa fa-plus"></i></p>
+	      		<h3 id="counter_4">0</h3>
+	      		
+	    	</div>
+	  	</div>
+  
+	    <div class="column">
+	    	<div class="card">
+			    <p><i class="fa fa-tasks"></i></p>
+			    <h3 id="counter_5">0</h3>
+			    
+	    	</div>
+	  	</div>
+    
+	    <div class="column">
+	    	<div class="card">
+	      		<p><i class="fa fa-book"></i></p>
+	      		<h3 id="counter_6">0</h3>
+	      		
+	    	</div>
+	  	</div>
+  
+	  	<div class="column">
+	    	<div class="card">
+	      		<p><i class="fa fa-check-square"></i></p>
+	      		<h3 id="counter_7">0</h3>
+	      		
+	    	</div>
+	  	</div>
+	</div>
+
 	</p>
 
 	<p>
@@ -497,6 +605,7 @@
 
   				document.getElementById('content_pane').value = "";
   				pop_json_rec();
+  				get_counters();	
 
 			}
 
@@ -510,9 +619,11 @@
 						document.getElementById('record_table').deleteRow(i);
 						records.pop(record_id);
 						json_rec.splice(json_rec.indexOf(rec_), 1);
-						total_rows--;		
+						total_rows--;
+						get_counters();			
 					}
 				}
+
 			}
 
 			function getRandomInt(n) 
@@ -631,7 +742,9 @@
 
 						document.getElementById('impact').selectedIndex = tmp_impact;
 						document.getElementById('category').selectedIndex = tmp_category;
-						document.getElementById('content_pane').value = tmp_content;						
+						document.getElementById('content_pane').value = tmp_content;
+
+
 					}
 				}
 				else window.alert('Must include a valid bragsheet.json file');
@@ -866,6 +979,7 @@
 					records.pop(record_id);
 					json_rec.splice(json_rec.indexOf(rec_), 1);
 					total_rows--;
+					get_counters();	
 
 					rec_ = null;
 					rec = null;
@@ -971,6 +1085,56 @@
 
 		}
 
+		function get_counters()
+		{	
+			let count_0 = 0;
+			let count_1 = 0;
+			let count_2 = 0;
+			let count_3 = 0;
+			let count_4 = 0;
+			let count_5 = 0;
+			let count_6 = 0;
+			let count_7 = 0;
+
+			for (let i = 0; i < json_rec.length; i++)
+			{
+				let count = categories.indexOf(json_rec[i][Object.keys(json_rec[i])].Category)
+
+				if(count == 0)
+					count_0++;
+
+				else if (count == 1)
+					count_1++;
+
+				else if (count == 2)
+					count_2++;
+
+				else if (count == 3)
+					count_3++;
+
+				else if (count == 4)
+					count_4++;
+
+				else if (count == 5)
+					count_5++;
+
+				else if (count == 6)
+					count_6++;
+
+				else if (count == 7)
+					count_7++;
+
+			}
+			document.getElementById('counter_0').textContent = count_0;
+			document.getElementById('counter_1').textContent = count_1;
+			document.getElementById('counter_2').textContent = count_2;
+			document.getElementById('counter_3').textContent = count_3;
+			document.getElementById('counter_4').textContent = count_4;
+			document.getElementById('counter_5').textContent = count_5;
+			document.getElementById('counter_6').textContent = count_6;
+			document.getElementById('counter_7').textContent = count_7;
+		}
+
 				
 			//end function def
 
@@ -984,6 +1148,7 @@
 			</script>
 
 			<script src="https://code.iconify.design/1/1.0.7/iconify.min.js" crossorigin='anonymous'></script>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin='anonymous'>
 
 		</div>
 	</body>
