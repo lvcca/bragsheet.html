@@ -83,7 +83,7 @@
 		  background-color: #4CAF50; 
 		  border: none;
 		  color: white;
-		  padding: 12px 28px;
+		  padding: 4px 16px;
 		  text-align: center;
 		  text-decoration: none;
 		  display: inline-block;
@@ -106,6 +106,7 @@
 		  background-color: white; 
 		  color: black; 
 		  border: 2px solid #3a6791;
+		  padding: 12px 20px;
 		}
 
 		.button1:hover {
@@ -119,7 +120,7 @@
 		  background-color: #3a6791; 
 		  color: white; 
 		  border: 2px solid #3a6791;
-		  padding: 8px 20px;
+		  padding: 4px 16px;
 		}
 
 		.button2:hover {
@@ -133,12 +134,26 @@
 		  background-color: darkorange; 
 		  color: darkgreen; 
 		  border: 2px solid #3a6791;
-		  padding: 8px 20px;
+		  padding: 4px 16px;
 		}
 
 		.button3:hover {
 			background-color: darkgreen;
 		  	color: darkorange;
+  			box-shadow: 0 12px 16px 0 rgba(0,0,0,0.99), 0 17px 50px 0 rgba(0,0,0,0.88);
+		}
+
+		.button4 {
+		  border-radius: 25px;
+		  background-color: #7dbaff; 
+		  color: navajowhite; 
+		  border: 2px solid #3a6791;
+		  padding: 4px 16px;
+		}
+
+		.button4:hover {
+			background-color: navajowhite;
+		  	color: #7dbaff;
   			box-shadow: 0 12px 16px 0 rgba(0,0,0,0.99), 0 17px 50px 0 rgba(0,0,0,0.88);
 		}
 
@@ -231,29 +246,30 @@
 			<button class ='button button3' onclick='import_record()' style='letter-spacing: 3px;' id='import_button'>import</button>
 		</center>
 	</p>
-	<p style="font-family: 'Roboto', sans-serif; color:#1d456e; letter-spacing: 3px; text-transform: lowercase; font-size: large;"><b>Start Date</b>
-			<select class='select' id="start_day" style='border-radius: 25px; padding: 8px 16px; font-size: large;'></select>
-			<select id="start_month" class='select' style='border-radius: 25px; padding: 8px 16px; font-size: large;'></select>
-			<select id="start_year" class='select' style='border-radius: 25px; padding: 8px 16px; font-size: large;'></select>
+	<p style="font-family: 'Roboto', sans-serif; color:#1d456e; letter-spacing: 3px; text-transform: font-size: large;"><b>Start Date</b>
+			<select class='select' id="start_day" style='border-radius: 25px; padding: 4px 16px; font-size: large;'></select>
+			<select id="start_month" class='select' style='border-radius: 25px; padding: 4px 16px; font-size: large;'></select>
+			<select id="start_year" class='select' style='border-radius: 25px; padding: 4px 16px; font-size: large;'></select>
 			<button class='button button2' onclick="set_today('start_')">reset</button>
 	</p>
 
-	<p style="font-family: 'Roboto', sans-serif; color:#1d456e; letter-spacing: 3px; text-transform: lowercase; font-size: large;"><b>End Date</b>
-		<select id="end_day" class='select' style='border-radius: 25px; padding: 8px 16px; font-size: large;'></select>
-		<select id="end_month" class='select' style='border-radius: 25px; padding: 8px 16px; font-size: large;'></select>
-		<select id="end_year" class='select' style='border-radius: 25px; padding: 8px 16px; font-size: large;'></select>
+	<p style="font-family: 'Roboto', sans-serif; color:#1d456e; letter-spacing: 3px; text-transform: font-size: large;"><b>End Date</b>
+		<select id="end_day" class='select' style='border-radius: 25px; padding: 4px 16px; font-size: large;'></select>
+		<select id="end_month" class='select' style='border-radius: 25px; padding: 4px 16px; font-size: large;'></select>
+		<select id="end_year" class='select' style='border-radius: 25px; padding: 4px 16px; font-size: large;'></select>
 		<button class='button button2' onclick="set_today('end_')">reset</button>
 	</p> 
 	
-	<p style="font-family: 'Roboto', sans-serif; color:#1d456e; letter-spacing: 3px; text-transform: lowercase; font-size: large;"><b>Category</b>
-		<select id="category" class='select' style='border-radius: 25px; padding: 8px 16px; font-size: large; letter-spacing: 3px;'>Category</select>
+	<p style="font-family: 'Roboto', sans-serif; color:#1d456e; letter-spacing: 3px; text-transform: font-size: large;"><b>Category</b>
+		<select id="category" class='select' style='border-radius: 25px; padding: 4px 16px; font-size: large; letter-spacing: 3px;'>Category</select>
 	</p>
 
-	<p style="font-family: 'Roboto', sans-serif; color:#1d456e; letter-spacing: 3px; text-transform: lowercase; font-size: large;"><b>Impact</b>
-		<select id="impact" class='select' style='border-radius: 25px; padding: 8px 16px; font-size: large; letter-spacing: 3px;'>Impact</select>
+	<p style="font-family: 'Roboto', sans-serif; color:#1d456e; letter-spacing: 3px; text-transform: font-size: large;"><b>Impact</b>
+		<select id="impact" class='select' style='border-radius: 25px; padding: 4px 16px; font-size: large; letter-spacing: 3px;'>Impact</select>
+		<button class='button button4' onclick="get_admin()">Admin Data</button>
 	</p>
 
-	<textarea style="font-family: 'Times New Roman', Times, serif; font-size:24px; border-radius: 25px; text-align: justify; text-align-last: center;" id="content_pane" rows="8" cols="70" class='textarea'>Record entry.</textarea>
+	<textarea style="font-family: 'Times New Roman', Times, serif; font-size:24px; border-radius: 25px; text-align: justify; text-align-last: center;" id="content_pane" rows="10" cols="70" class='textarea'>Record entry.</textarea>
 
 	<p style="font-family: 'Roboto', sans-serif">
 		<button class ='button button1' onclick='create_record();' style='letter-spacing: 3px;'>Create Record</button>
@@ -293,6 +309,15 @@
 
 			var file;
 			var fr = new FileReader();
+
+			var fullName = null;
+			var designators = null;
+			var branch = null;
+			var dateReported = null;
+			var lastEval = null;
+			var dateOfRate = null;
+
+			var json_admin = null;
 
 			//start classes
 			//record container
@@ -401,7 +426,7 @@
 				//initialize record
 				let rec = new record();
 				//assign record values
-				rec.content = content;
+				rec.content = document.getElementById('content_pane').value;
 				rec.impact = imp;
 				rec.startDate = start_date;
 				rec.endDate = end_date;
@@ -544,10 +569,16 @@
 					{	
 						//console.log(fr.result);
 
-						var imported_json = JSON.parse(fr.result);
+						var imported_json_ = JSON.parse(fr.result);
+						console.log(imported_json_);
+						var imported_json = imported_json_.json_rec;
 						var size = Object.keys(imported_json).length;
-						
-						console.log(imported_json)
+						console.log(imported_json);
+
+						var imported_admin_rec = imported_json_.json_admin;
+						console.log(Object.keys(imported_admin_rec));
+
+						import_admin(imported_admin_rec.adminData);
 
 						let tmp_start_day = document.getElementById('start_day').value;
 						let tmp_start_month = document.getElementById('start_month').value;
@@ -563,22 +594,31 @@
 						{
 							let id = Object.keys(imported_json)[j];
 
-							let rec = imported_json[j];
-							let ij = rec[Object.keys(imported_json[j])]
+							if (id == 'adminData')
+							{
+								console.log('Found Admin Data');
+							}
 
-							document.getElementById('start_day').value = ij.startDate.day;
-							document.getElementById('start_month').value = ij.startDate.month;
-							document.getElementById('start_year').value = ij.startDate.year;
+							else
+							{
 
-							document.getElementById('end_day').value = ij.endDate.day;
-							document.getElementById('end_month').value = ij.endDate.month;
-							document.getElementById('end_year').value = ij.endDate.year;							
-							
-							document.getElementById('impact').selectedIndex = impact.indexOf(ij.impact);
-							document.getElementById('category').selectedIndex = categories.indexOf(ij.Category);
-							document.getElementById('content_pane').value = ij.Content;
+								let rec = imported_json[j];
+								let ij = rec[Object.keys(imported_json[j])]
 
-							create_record();
+								document.getElementById('start_day').value = ij.startDate.day;
+								document.getElementById('start_month').value = ij.startDate.month;
+								document.getElementById('start_year').value = ij.startDate.year;
+
+								document.getElementById('end_day').value = ij.endDate.day;
+								document.getElementById('end_month').value = ij.endDate.month;
+								document.getElementById('end_year').value = ij.endDate.year;							
+								
+								document.getElementById('impact').selectedIndex = impact.indexOf(ij.impact);
+								document.getElementById('category').selectedIndex = categories.indexOf(ij.Category);
+								document.getElementById('content_pane').value = ij.Content;
+
+								create_record();
+							}
 						}
 
 						document.getElementById('start_day').value = tmp_start_day;
@@ -612,7 +652,7 @@
 				var text_out = "";
 
 					for (let i = 0; i < records.length; i++)
-					{
+					{	
 						text_out += 
 							`						{	\"${records[i].id}\" : 
 							{
@@ -620,7 +660,7 @@
 								\"endDate\" : { \"day\" : \"${records[i].endDate.day}\", \"month\" : \"${records[i].endDate.month}\", \"year\" : \"${records[i].endDate.year}\" },
 								\"impact\" : \"${records[i].impact}\",
 								\"Category\" : \"${records[i].cat}\",
-								\"Content\" : \"${records[i].content}\"
+								\"Content\" : \"${String(records[i].content).replaceAll("\n", "\\n")}\"
 							}
 						}`
 
@@ -648,9 +688,10 @@
 		}
 
 		function for_download_record()
-		{
+		{	
+			pop_admin();
 			string_output = '';
-			string_output = JSON.stringify(json_rec);
+			string_output = JSON.stringify({json_rec, json_admin});
 			console.log(string_output);
 			return this.string_output;
 		}
@@ -669,13 +710,13 @@
 			let string_output = 
 			`Administrative Data:
 
-	a. Full Name :
-	b. Rate and warfare/qualification designators :
+	a. Full Name : ${this.fullName}
+	b. Rate and warfare/qualification designators : ${this.designators}
 	c. SSN :
-	d. Branch :
-	e. Date Reported :
-	f. Ending date of last evaluation :
-	g. Date of rate :
+	d. Branch : ${this.branch}
+	e. Date Reported : ${this.dateReported}
+	f. Ending date of last evaluation : ${this.lastEval}
+	g. Date of rate : ${this.dateOfRate}
 			`;
 			string_output += '\n'
 
@@ -834,6 +875,100 @@
 			}
 
 			return;
+		}
+
+		function get_admin()
+		{
+
+			/**
+			 * 
+			 * 	a. Full Name :
+			 *	b. Rate and warfare/qualification designators :
+			 *	d. Branch :
+			 *	e. Date Reported :
+			 *	f. Ending date of last evaluation :
+			 *	g. Date of rate :
+			 * 
+			 * */
+
+			let fullName_ = prompt('Enter your full name.', 'First Last, M');
+
+			this.fullName = fullName_;
+			
+			if (this.fullName != null && this.fullName != "First Last, M")
+			{
+				this.designators = prompt('Enter rate and warfare/qualification designators.', 'Ex. IT2(IW)');
+
+				if (this.designators != null && this.designators != 'Ex. IT2(IW)')
+				{
+					this.branch = prompt('Enter branch.', 'USN');
+
+					if (this.branch != null)
+					{
+						this.dateReported = prompt('Enter date reported.', 'DDMMYYYY');
+
+						if (this.dateReported != null && this.dateReported != 'DDMMYYYY')
+						{
+							this.lastEval = prompt('Enter ending date of last evaluation.', 'DDMMYYYY');
+
+							if (this.lastEval != null && this.lastEval != 'DDMMYYYY')
+							{
+								this.dateOfRate = prompt('Enter date of rate.', 'DDMMYYYY');
+
+								if (this.dateOfRate == 'DDMMYYYY')
+								{
+									this.dateOfRate == null;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			pop_admin();
+		
+		}
+
+		function pop_admin()
+		{
+
+			this.json_admin = {"adminData" : {"fullName" : this.fullName, "designators" : this.designators, "branch" : this.branch, "dateReported" : this.dateReported, "lastEval" : this.lastEval, "dateOfRate" : this.dateOfRate }};
+
+			console.log(JSON.parse(JSON.stringify(json_admin)));
+
+		}
+
+		function import_admin(imported_admin_rec)
+		{
+			if (imported_admin_rec.fullName != null)
+			{ 
+				this.fullName = imported_admin_rec.fullName;
+			}	
+			if (imported_admin_rec.designators != null)
+			{
+				this.designators = imported_admin_rec.designators;
+			}
+
+			if (imported_admin_rec.branch != null)
+			{
+				this.branch = imported_admin_rec.branch;
+			}
+
+			if (imported_admin_rec.dateReported != null)
+			{
+				this.dateReported = imported_admin_rec.dateReported;
+			}
+
+			if (imported_admin_rec.lastEval != null)
+			{
+				this.lastEval = imported_admin_rec.lastEval;
+			}
+
+			if (imported_admin_rec.dateOfRate != null)
+			{
+				this.dateOfRate = imported_admin_rec.dateOfRate;
+			}
+
 		}
 
 				
