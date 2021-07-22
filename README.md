@@ -22,3 +22,9 @@ With feedback, the export format can be adjusted to more accurately reflect the 
 
 ![image](https://user-images.githubusercontent.com/49540886/126706467-2d2f7525-3795-4aaf-9a61-42133ec9d4b3.png)
 
+<H3>TO DOs</H3>
+<ul>
+<li>Drag and drop import file</li>
+<li>Remove import button and include onload import button function when file loaded</li>
+<li>Tooltip above counter with name of counter</li>
+</ul>
