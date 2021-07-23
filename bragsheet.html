@@ -273,6 +273,29 @@
 
 		.fa {font-size:50px;}
 
+		.tooltip {
+		  position: relative;
+		  display: inline;
+		}
+
+		.tooltip .tooltiptext {
+		  visibility: hidden;
+		  width: 120px;
+		  background-color: navajowhite;
+		  color: black;
+		  text-align: center;
+		  border-radius: 6px;
+		  padding: 5px 0;
+
+		  /* Position the tooltip */
+		  position: absolute;
+		  z-index: 1;
+		}
+
+		.tooltip:hover .tooltiptext {
+		  visibility: visible;
+		}
+
 	</style>
 
 	<div class='title title1'>
@@ -319,67 +342,86 @@
 	<p>
 	<div class="row">
   		<div class="column">
-    		<div class="card">
-      			<p><i class="fa fa-briefcase"></i></p>
-      			<h3 id="counter_0">0</h3>
-      			
-    		</div>
+  			<a class= "tooltip">
+				<span class="tooltiptext">Duties and Responsibilities</span>
+    				<div class="card">
+      					<p><i class="fa fa-briefcase"></i></p>
+      					<h3 id="counter_0">0</h3>
+    				</div>
+    		</a>
   		</div>
+  			
 
 	  	<div class="column">
-	    	<div class="card">
-	      		<p><i class="fa fa-certificate"></i></p>
-	      		<h3 id="counter_1">0</h3>
+	  		<a class= "tooltip">
+				<span class="tooltiptext">Job Accomplishments and Initiative</span>
+	    		<div class="card">
+	      			<p><i class="fa fa-certificate"></i></p>
+	      			<h3 id="counter_1">0</h3>
 	      		
-	    	</div>
+	    		</div>
+	    	</a>
 	  	</div>
   
 	  	<div class="column">
-	    	<div class="card">
-		      	<p><i class="fa fa-users"></i></p>
-		      	<h3 id="counter_2">0</h3>
-		      	
-	    	</div>
+	  		<a class= "tooltip">
+				<span class="tooltiptext">Supervision and Leadership</span>
+	    		<div class="card">
+		      		<p><i class="fa fa-users"></i></p>
+		      		<h3 id="counter_2">0</h3>
+	    		</div>
+	   	 	</a>
 	  	</div>
   
 	    <div class="column">
-	    	<div class="card">
-			    <p><i class="fa fa-trophy"></i></p>
-			    <h3 id="counter_3">0</h3>
-			    
-	    	</div>
+	    	<a class= "tooltip">
+				<span class="tooltiptext">Special Achievements</span>
+	    		<div class="card">
+			    	<p><i class="fa fa-trophy"></i></p>
+			    	<h3 id="counter_3">0</h3>
+	    		</div>
+	    	</a>
 	  	</div>
 	  
 	    <div class="column">
-	    	<div class="card">
-	      		<p><i class="fa fa-plus"></i></p>
-	      		<h3 id="counter_4">0</h3>
-	      		
-	    	</div>
+	    	<a class= "tooltip">
+				<span class="tooltiptext">Off-Duty Activities</span>
+	    		<div class="card">
+	      			<p><i class="fa fa-plus"></i></p>
+	      			<h3 id="counter_4">0</h3>
+	    		</div>
+	    	</a>
 	  	</div>
   
 	    <div class="column">
-	    	<div class="card">
-			    <p><i class="fa fa-tasks"></i></p>
-			    <h3 id="counter_5">0</h3>
-			    
-	    	</div>
+	    	<a class= "tooltip">
+				<span class="tooltiptext">Collateral Duties</span>
+	    			<div class="card">
+			    		<p><i class="fa fa-tasks"></i></p>
+			    		<h3 id="counter_5">0</h3>	    
+	    			</div>
+	    	</a>
 	  	</div>
     
 	    <div class="column">
-	    	<div class="card">
-	      		<p><i class="fa fa-book"></i></p>
-	      		<h3 id="counter_6">0</h3>
-	      		
-	    	</div>
+	    	<a class= "tooltip">
+				<span class="tooltiptext">Education (Navy, Personal)</span>
+	    		<div class="card">
+		      		<p><i class="fa fa-book"></i></p>
+		      		<h3 id="counter_6">0</h3>
+	    		</div>
+	    	</a>
 	  	</div>
   
 	  	<div class="column">
-	    	<div class="card">
-	      		<p><i class="fa fa-check-square"></i></p>
-	      		<h3 id="counter_7">0</h3>
+	  		<a class= "tooltip">
+				<span class="tooltiptext">Qualifications</span>
+	    		<div class="card">
+		      		<p><i class="fa fa-check-square"></i></p>
+		      		<h3 id="counter_7">0</h3>
 	      		
-	    	</div>
+	    		</div>
+	    	</a>
 	  	</div>
 	</div>
 
@@ -773,7 +815,7 @@
 								\"endDate\" : { \"day\" : \"${records[i].endDate.day}\", \"month\" : \"${records[i].endDate.month}\", \"year\" : \"${records[i].endDate.year}\" },
 								\"impact\" : \"${records[i].impact}\",
 								\"Category\" : \"${records[i].cat}\",
-								\"Content\" : \"${String(records[i].content).replaceAll("\n", "\\n")}\"
+								\"Content\" : \"${String(records[i].content).replaceAll("\n", "\\n").replaceAll("\"","\'")}\"
 							}
 						}`
 
