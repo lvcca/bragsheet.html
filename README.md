@@ -12,9 +12,9 @@ With feedback, the export format can be adjusted to more accurately reflect the 
 <li>2. Open file with browser. </li>
 </ul>
 
-![image](https://user-images.githubusercontent.com/49540886/126822152-da8891ec-6946-4914-809b-5962bd62e757.png)
+![image](https://user-images.githubusercontent.com/49540886/126822919-4a1121fd-ae4e-47c2-859e-92f4b4e831e3.png)
 
-![image](https://user-images.githubusercontent.com/49540886/126822439-980ed0f8-e8a2-4320-8c84-56d80c503662.png)
+![image](https://user-images.githubusercontent.com/49540886/126822935-7aaeafa2-d0a4-4d45-947c-7f16ef2fb3d0.png)
 
 ![image](https://user-images.githubusercontent.com/49540886/126817292-3d3322ef-69b3-4205-98c6-cbb0495244be.png)
 
