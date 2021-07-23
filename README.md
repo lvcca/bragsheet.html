@@ -12,6 +12,8 @@ With feedback, the export format can be adjusted to more accurately reflect the 
 <li>2. Open file with browser. </li>
 </ul>
 
+![image](https://user-images.githubusercontent.com/49540886/126817000-f0e04b2f-7491-4f25-93c4-abce68bd670b.png)
+
 
 <H3>Files</H3>
 <ul>
