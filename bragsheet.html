@@ -72,6 +72,21 @@
 		 * END CSS table
 		 **/
 
+		 #table_2 {
+		  border-collapse: collapse;
+		  width: 50%;
+		  margin-left: auto; 
+  	      margin-right: auto;
+		}
+
+		#table_2 td, #table_2 th {
+		  padding: 0px;
+		}
+
+		#table_2 th {
+		  text-align: Center;
+		}
+
 		/**
 		 * START Buttons
 		 * */
@@ -237,11 +252,11 @@
 		
 		.column {
 		  	float: left;
-		  	padding: 0 0px;
+		  	padding: 0px 0px;
 		}
 
 		.row {
-			width: 38%;
+			width: 50%;
 			margin:0 auto;
 		}
 
@@ -267,7 +282,7 @@
 			font-size:18px;
 		  	background-color: #5e6d80;
 		  	color: white;
-		  	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.99), 0 17px 50px 0 rgba(0,0,0,0.99);
+		  	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.75), 0 17px 50px 0 rgba(0,0,0,0.75);
 		  	border: 2px solid navajowhite;
 		}
 
@@ -285,7 +300,7 @@
 		  color: black;
 		  text-align: center;
 		  border-radius: 6px;
-		  padding: 5px 0;
+		  padding: 15px 0;
 
 		  /* Position the tooltip */
 		  position: absolute;
@@ -341,93 +356,102 @@
 		<button class ='button button1' id='export_record' onclick='download("bragsheet.txt", for_download_bragsheet("Category"))' href="" style='letter-spacing: 3px;'>Export Bragsheet</button>
 	</p>
 
-	<p>
-	<div class="row">
-  		<div class="column">
-  			<a class= "tooltip">
-				<span class="tooltiptext">Duties and Responsibilities</span>
-    				<div class="card">
-      					<p><i class="fa fa-briefcase"></i></p>
-      					<h3 id="counter_0">0</h3>
-    				</div>
-    		</a>
-  		</div>
-  			
+<p>
+	<table id="table_2">
+		<tr>
+			<th>
+				<div class="column">
+					<a class= "tooltip">
+						<span class="tooltiptext">Duties and Responsibilities</span>
+						<div class="card">
+				      		<p><i class="fa fa-briefcase"></i></p>
+				      		<h3 id="counter_0">0</h3>
+			    		</div>
+			    	</a>
+			    </div>
+			</th>
+			<th>
+				<div class="column">
+	  				<a class= "tooltip">
+						<span class="tooltiptext">Job Accomplishments and Initiative</span>
+	    				<div class="card">
+	      					<p><i class="fa fa-certificate"></i></p>
+	      					<h3 id="counter_1">0</h3>
+	    				</div>
+	    			</a>
+	  			</div>
+			</th>
+			<th>
+				<div class="column">
+	  				<a class= "tooltip">
+						<span class="tooltiptext">Supervision and Leadership</span>
+	    				<div class="card">
+		      				<p><i class="fa fa-users"></i></p>
+		      				<h3 id="counter_2">0</h3>
+	    				</div>
+	   	 			</a>
+	  			</div>
+			</th>
+			<th>
+				<div class="column">
+	    			<a class= "tooltip">
+						<span class="tooltiptext">Special Achievements</span>
+	    				<div class="card">
+			    			<p><i class="fa fa-trophy"></i></p>
+			    			<h3 id="counter_3">0</h3>
+	    				</div>
+	    			</a>
+	  			</div>
+			</th>
+			<th>
+				<div class="column">
+	    			<a class= "tooltip">
+						<span class="tooltiptext">Off-Duty Activities</span>
+	    				<div class="card">
+	      					<p><i class="fa fa-plus"></i></p>
+	      					<h3 id="counter_4">0</h3>
+	    				</div>
+	    			</a>
+	  			</div>
+			</th>
+			<th>
+				 <div class="column">
+	    			<a class= "tooltip">
+						<span class="tooltiptext">Collateral Duties</span>
+	    				<div class="card">
+			    			<p><i class="fa fa-tasks"></i></p>
+			    			<h3 id="counter_5">0</h3>	    
+	    				</div>
+	    			</a>
+	  			</div>
+			</th>
+			<th>
+				<div class="column">
+	    			<a class= "tooltip">
+						<span class="tooltiptext">Education (Navy, Personal)</span>
+	    					<div class="card">
+		      					<p><i class="fa fa-book"></i></p>
+		      					<h3 id="counter_6">0</h3>
+	    					</div>
+	    			</a>
+	  			</div>
+			</th>
+			<th>
+				<div class="column">
+	  				<a class= "tooltip">
+						<span class="tooltiptext">Qualifications</span>
+	    				<div class="card">
+		      				<p><i class="fa fa-check-square"></i></p>
+		      				<h3 id="counter_7">0</h3>
+	    				</div>
+	    			</a>
+	  			</div>
+			</th>
+		</tr>
+	</table>
+</p>
 
-	  	<div class="column">
-	  		<a class= "tooltip">
-				<span class="tooltiptext">Job Accomplishments and Initiative</span>
-	    		<div class="card">
-	      			<p><i class="fa fa-certificate"></i></p>
-	      			<h3 id="counter_1">0</h3>
-	      		
-	    		</div>
-	    	</a>
-	  	</div>
-  
-	  	<div class="column">
-	  		<a class= "tooltip">
-				<span class="tooltiptext">Supervision and Leadership</span>
-	    		<div class="card">
-		      		<p><i class="fa fa-users"></i></p>
-		      		<h3 id="counter_2">0</h3>
-	    		</div>
-	   	 	</a>
-	  	</div>
-  
-	    <div class="column">
-	    	<a class= "tooltip">
-				<span class="tooltiptext">Special Achievements</span>
-	    		<div class="card">
-			    	<p><i class="fa fa-trophy"></i></p>
-			    	<h3 id="counter_3">0</h3>
-	    		</div>
-	    	</a>
-	  	</div>
-	  
-	    <div class="column">
-	    	<a class= "tooltip">
-				<span class="tooltiptext">Off-Duty Activities</span>
-	    		<div class="card">
-	      			<p><i class="fa fa-plus"></i></p>
-	      			<h3 id="counter_4">0</h3>
-	    		</div>
-	    	</a>
-	  	</div>
-  
-	    <div class="column">
-	    	<a class= "tooltip">
-				<span class="tooltiptext">Collateral Duties</span>
-	    			<div class="card">
-			    		<p><i class="fa fa-tasks"></i></p>
-			    		<h3 id="counter_5">0</h3>	    
-	    			</div>
-	    	</a>
-	  	</div>
-    
-	    <div class="column">
-	    	<a class= "tooltip">
-				<span class="tooltiptext">Education (Navy, Personal)</span>
-	    		<div class="card">
-		      		<p><i class="fa fa-book"></i></p>
-		      		<h3 id="counter_6">0</h3>
-	    		</div>
-	    	</a>
-	  	</div>
-  
-	  	<div class="column">
-	  		<a class= "tooltip">
-				<span class="tooltiptext">Qualifications</span>
-	    		<div class="card">
-		      		<p><i class="fa fa-check-square"></i></p>
-		      		<h3 id="counter_7">0</h3>
-	      		
-	    		</div>
-	    	</a>
-	  	</div>
-	</div>
 
-	</p>
 
 	<p>
 		<table id='record_table'>
