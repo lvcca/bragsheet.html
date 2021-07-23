@@ -313,6 +313,7 @@
 			<select id="start_month" class='select' style='border-radius: 25px; padding: 4px 16px; font-size: large;'></select>
 			<select id="start_year" class='select' style='border-radius: 25px; padding: 4px 16px; font-size: large;'></select>
 			<button class='button button2' onclick="set_today('start_')">reset</button>
+			<button class='button button2' onclick="same_as_end()">same</button>
 	</p>
 
 	<p style="font-family: 'Roboto', sans-serif; color:#1d456e; letter-spacing: 3px; text-transform: font-size: large;"><b>End Date</b>
@@ -320,6 +321,7 @@
 		<select id="end_month" class='select' style='border-radius: 25px; padding: 4px 16px; font-size: large;'></select>
 		<select id="end_year" class='select' style='border-radius: 25px; padding: 4px 16px; font-size: large;'></select>
 		<button class='button button2' onclick="set_today('end_')">reset</button>
+		<button class='button button2' onclick="same_as_start()">same</button>
 	</p> 
 	
 	<p style="font-family: 'Roboto', sans-serif; color:#1d456e; letter-spacing: 3px; text-transform: font-size: large;"><b>Category</b>
@@ -547,6 +549,20 @@
 				day.selectedIndex = (date.getDate() - 1);
 				month.selectedIndex = date.getMonth();
 				year.selectedIndex = date.getYear();
+			}
+
+			function same_as_start()
+			{
+				document.getElementById('end_day').selectedIndex = document.getElementById('start_day').selectedIndex;
+				document.getElementById('end_month').selectedIndex = document.getElementById('start_month').selectedIndex;
+				document.getElementById('end_year').selectedIndex = document.getElementById('start_year').selectedIndex;
+			}
+
+			function same_as_end()
+			{
+				document.getElementById('start_day').selectedIndex = document.getElementById('end_day').selectedIndex;
+				document.getElementById('start_month').selectedIndex = document.getElementById('end_month').selectedIndex;
+				document.getElementById('start_year').selectedIndex = document.getElementById('end_year').selectedIndex;
 			}
 
 			function create_record()
