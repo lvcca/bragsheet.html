@@ -31,5 +31,4 @@ With feedback, the export format can be adjusted to more accurately reflect the 
 <ul>
 <li>Drag and drop import file</li>
 <li>Remove import button and include onload import button function when file loaded</li>
-<li>Tooltip above counter with name of counter</li>
 </ul>
