@@ -14,6 +14,9 @@ With feedback, the export format can be adjusted to more accurately reflect the 
 
 ![image](https://user-images.githubusercontent.com/49540886/126817145-d3f20ab7-b2b8-4d3c-9c41-280a9cfdc7c0.png)
 
+![image](https://user-images.githubusercontent.com/49540886/126817254-b6da4b2a-cfb1-45cd-8dee-ea95149723dc.png)
+
+![image](https://user-images.githubusercontent.com/49540886/126817292-3d3322ef-69b3-4205-98c6-cbb0495244be.png)
 
 
 <H3>Files</H3>
