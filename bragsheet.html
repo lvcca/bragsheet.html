@@ -354,8 +354,8 @@
 
 	<p style="font-family: 'Roboto', sans-serif">
 		<button class ='button button1' onclick='create_record();' style='letter-spacing: 3px;'>Create Record</button>
-		<button class ='button button1' id='export_record' onclick='download("record.txt", for_download_record())' href="" style='letter-spacing: 3px;'>Export Record</button>
-		<button class ='button button1' id='export_record' onclick='download("bragsheet.txt", for_download_bragsheet("Category"))' href="" style='letter-spacing: 3px;'>Export Bragsheet</button>
+		<button class ='button button1' id='export_record' onclick='download("record.txt", for_download_record())' style='letter-spacing: 3px;'><i class='fa fa-download'></i> Export Record</button>
+		<button class ='button button1' id='export_bragsheet' onclick='download("bragsheet.txt", for_download_bragsheet("Category"))' href="" style='letter-spacing: 3px;'><i class='fa fa-download'></i> Export Bragsheet</button>
 	</p>
 
 <p>
@@ -1088,7 +1088,7 @@
 			 *	g. Date of rate :
 			 * 
 			 * */
-
+			 
 			let fullName_ = prompt('Enter your full name.', 'First Last, M');
 
 			this.fullName = fullName_;
