@@ -13,7 +13,10 @@ With feedback, the export format can be adjusted to more accurately reflect the 
 </ul>
 
 <H3>Install with Curl</H3>
-<b>curl https://raw.githubusercontent.com/lvcca/bragsheet.html/main/bragsheet.html -o bragsheet.html</b>
+<ul>
+<li><b>curl https://raw.githubusercontent.com/lvcca/bragsheet.html/main/bragsheet.html -o bragsheet.html</b></li>
+</ul>
+
 
 ![image](https://user-images.githubusercontent.com/49540886/126872013-0804e960-0e45-4a14-a022-783f7e115162.png)
 
