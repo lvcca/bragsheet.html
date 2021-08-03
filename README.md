@@ -12,7 +12,7 @@ With feedback, the export format can be adjusted to more accurately reflect the 
 <li>2. Open file with browser. </li>
 </ul>
 
-<H3>Install with Curl</H3>
+<H3>Install with Curl && Run for Windows, MacOS, and Linux with firefox</H3>
 <ul>
 <li><b>curl https://raw.githubusercontent.com/lvcca/bragsheet.html/main/bragsheet.html -o bragsheet.html && bragsheet.html || open bragsheet.html || firefox bragsheet.html</b></li>
 </ul>
