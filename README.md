@@ -14,7 +14,7 @@ With feedback, the export format can be adjusted to more accurately reflect the 
 
 <H3>Install with Curl</H3>
 <ul>
-<li><b>curl https://raw.githubusercontent.com/lvcca/bragsheet.html/main/bragsheet.html -o bragsheet.html</b></li>
+<li><b>curl https://raw.githubusercontent.com/lvcca/bragsheet.html/main/bragsheet.html -o bragsheet.html && bragsheet.html</b></li>
 </ul>
 
 
