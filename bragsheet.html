@@ -460,8 +460,8 @@
 			<tr>
 			   <th>Start Date</th>
 			   <th>End Date</th>
-			   <th>Category</th>
-			   <th>Impact</th>
+			   <th onclick="do_sort('category')">Category</th>
+			   <th onclick="do_sort('impact')">Impact</th>
 			   <th>Content</th>
 			   <th>Edit</th>
 		   </tr>
@@ -482,6 +482,7 @@
 			//list of entry containers
 			var records = []
 			var json_rec = []
+			var tmp_json_rec = [];
 
 			var total_rows = 0;
 
@@ -496,6 +497,8 @@
 			var dateOfRate = null;
 
 			var json_admin = null;
+
+			var sorted = false;
 
 			//start classes
 			//record container
@@ -1054,7 +1057,7 @@
 					document.getElementById('end_day').value = rec.endDate.day;
 					document.getElementById('end_month').value = rec.endDate.month;
 					document.getElementById('end_year').value = rec.endDate.year;
-					document.getElementById('impact').selectedIndex = impact.indexOf[rec.impact];
+					document.getElementById('impact').selectedIndex = impact.indexOf(rec.impact);
 					document.getElementById('category').selectedIndex = categories.indexOf(rec.Category);
 					document.getElementById('content_pane').value = rec.Content;
 
@@ -1217,6 +1220,94 @@
 			document.getElementById('counter_5').textContent = count_5;
 			document.getElementById('counter_6').textContent = count_6;
 			document.getElementById('counter_7').textContent = count_7;
+		}
+
+		function do_sort(sort_type)
+		{
+
+			this.tmp_json_rec = [];
+
+			for (let i = 0; i < this.json_rec.length; i++)
+			{
+				this.tmp_json_rec.push(this.json_rec[i][Object.keys(json_rec[i])]);
+			}
+			
+			console.log("Sort by: " + sort_type)
+
+			switch(sort_type)
+			{
+
+				case 'impact':
+					if (this.sorted == false)
+					{
+						this.tmp_json_rec.sort((a,b) => impact.indexOf(a.impact) - impact.indexOf(b.impact))
+						this.sorted = true;
+					}
+					else
+					{
+						this.tmp_json_rec.sort((a,b) => impact.indexOf(b.impact) - impact.indexOf(a.impact))
+						this.sorted = false;
+					}
+					break;
+
+				case 'category':
+					if (this.sorted == false)
+					{
+						this.tmp_json_rec.sort((a,b) => categories.indexOf(a.Category) - categories.indexOf(b.Category))
+						this.sorted = true;
+					}
+					else
+					{
+						this.tmp_json_rec.sort((a,b) => categories.indexOf(b.Category) - categories.indexOf(a.Category))
+						this.sorted = false;
+					}
+					break;
+				/**
+				case 'start_date':
+					if (this.sorted == false)
+					{
+						this.tmp_json_rec.sort((a,b) => Date(a.startDate.year, a.startDate.month, a.startDate.day) - categories.indexOf(b.Category))
+						this.sorted = true;
+					}
+					else
+					{
+						this.tmp_json_rec.sort((a,b) => categories.indexOf(b.Category) - categories.indexOf(a.Category))
+						this.sorted = false;
+					}
+					break;
+				**/
+				default:
+					console('[*] Sort Type not recognized...');
+
+			}
+			
+			let len = this.json_rec.length;
+
+			for (let i = (len-1); i > -1; i--)
+			{
+				remove_entry(Object.keys(this.json_rec[i]));
+				console.log("removed " + i);
+			}
+
+			
+			for (let i = 0; i < this.tmp_json_rec.length; i++)
+			{
+
+				document.getElementById('start_day').value = this.tmp_json_rec[i].startDate.day;
+				document.getElementById('start_month').value = this.tmp_json_rec[i].startDate.month;
+				document.getElementById('start_year').value = this.tmp_json_rec[i].startDate.year;
+
+				document.getElementById('end_day').value = this.tmp_json_rec[i].endDate.day;
+				document.getElementById('end_month').value = this.tmp_json_rec[i].endDate.month;
+				document.getElementById('end_year').value = this.tmp_json_rec[i].endDate.year;							
+				
+				document.getElementById('impact').selectedIndex = impact.indexOf(this.tmp_json_rec[i].impact);
+				document.getElementById('category').selectedIndex = categories.indexOf(this.tmp_json_rec[i].Category);
+				document.getElementById('content_pane').value = this.tmp_json_rec[i].Content;
+				
+				create_record();
+			}
+			
 		}
 
 				
