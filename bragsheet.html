@@ -460,8 +460,8 @@
 			<tr>
 			   <th>Start Date</th>
 			   <th>End Date</th>
-			   <th onclick="do_sort('category')">Category</th>
-			   <th onclick="do_sort('impact')">Impact</th>
+			   <th onclick="do_sort('category')" class=button >Category</th>
+			   <th onclick="do_sort('impact')" class=button >Impact</th>
 			   <th>Content</th>
 			   <th>Edit</th>
 		   </tr>
@@ -684,13 +684,15 @@
   				cell5.innerHTML = rec.content;
 
 
-  				//cell1.setAttribute('contenteditable', 'true');
-  				//cell2.setAttribute('contenteditable', 'true');
-  				//cell3.setAttribute('contenteditable', 'true');
-  				//cell4.setAttribute('contenteditable', 'true');
-  				//cell5.setAttribute('contenteditable', 'true');
+  				cell1.setAttribute('class', 'select');
+  				cell2.setAttribute('class', 'select');
+  				cell3.setAttribute('class', 'select');
+  				cell4.setAttribute('class', 'select');
+  				cell5.setAttribute('class', 'select');
+
 
   				document.getElementById('content_pane').value = "";
+  				
   				pop_json_rec();
   				get_counters();	
 
