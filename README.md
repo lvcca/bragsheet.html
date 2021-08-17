@@ -20,9 +20,9 @@ With feedback, the export format can be adjusted to more accurately reflect the 
 
 ![image](https://user-images.githubusercontent.com/49540886/129809615-83aa8611-847a-4468-8ac3-7eb9b299e4b1.png)
 
-![image](https://user-images.githubusercontent.com/49540886/126822935-7aaeafa2-d0a4-4d45-947c-7f16ef2fb3d0.png)
+![image](https://user-images.githubusercontent.com/49540886/129809673-47325333-1d3e-4f20-8de8-0540ff705be1.png)
 
-![image](https://user-images.githubusercontent.com/49540886/126817292-3d3322ef-69b3-4205-98c6-cbb0495244be.png)
+![image](https://user-images.githubusercontent.com/49540886/129809719-89b0c889-8290-4942-9f4b-5d3e184389b2.png)
 
 
 <H3>Files</H3>
@@ -31,7 +31,8 @@ With feedback, the export format can be adjusted to more accurately reflect the 
 <li>Bragsheet.txt : Formatted txt file with stored data.</li>
 </ul>
 
-![image](https://user-images.githubusercontent.com/49540886/126706467-2d2f7525-3795-4aaf-9a61-42133ec9d4b3.png)
+![image](https://user-images.githubusercontent.com/49540886/129809693-c12488d3-efba-4182-b99d-f1b6a179d924.png)
+![image](https://user-images.githubusercontent.com/49540886/129809753-3317505a-cd1f-46e5-8310-80745724d770.png)
 
 <H3>TO DOs</H3>
 <ul>
