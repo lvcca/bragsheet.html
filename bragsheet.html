@@ -458,11 +458,11 @@
 	<p>
 		<table id='record_table'>
 			<tr>
-			   <th>Start Date</th>
-			   <th>End Date</th>
+			   <th onclick="do_sort('start_date')" class=button >Start Date</th>
+			   <th onclick="do_sort('end_date')" class=button >End Date</th>
 			   <th onclick="do_sort('category')" class=button >Category</th>
 			   <th onclick="do_sort('impact')" class=button >Impact</th>
-			   <th>Content</th>
+			   <th onclick="do_sort('content')" class=button >Content</th>
 			   <th>Edit</th>
 		   </tr>
 		</table>
@@ -685,6 +685,8 @@
 
 
   				cell1.setAttribute('class', 'select');
+  				cell1.setAttribute('onclick', 'console.log(' + num + ')');
+  				
   				cell2.setAttribute('class', 'select');
   				cell3.setAttribute('class', 'select');
   				cell4.setAttribute('class', 'select');
@@ -1264,20 +1266,46 @@
 						this.sorted = false;
 					}
 					break;
-				/**
-				case 'start_date':
+
+				case 'content':
 					if (this.sorted == false)
 					{
-						this.tmp_json_rec.sort((a,b) => Date(a.startDate.year, a.startDate.month, a.startDate.day) - categories.indexOf(b.Category))
+						this.tmp_json_rec.sort((a,b) => a.Content.length - b.Content.length)
 						this.sorted = true;
 					}
 					else
 					{
-						this.tmp_json_rec.sort((a,b) => categories.indexOf(b.Category) - categories.indexOf(a.Category))
+						this.tmp_json_rec.sort((a,b) => b.Content.length - a.Content.length)
 						this.sorted = false;
 					}
 					break;
-				**/
+				
+				case 'start_date':
+					if (this.sorted == false)
+					{
+						this.tmp_json_rec.sort((a,b) => Date.UTC(a.startDate.year, (this.months.indexOf(a.startDate.month) + 1), a.startDate.day) - Date.UTC(b.startDate.year, (this.months.indexOf(b.startDate.month) + 1), b.startDate.day))
+						this.sorted = true;
+					}
+					else
+					{
+						this.tmp_json_rec.sort((a,b) => Date.UTC(b.startDate.year, (this.months.indexOf(b.startDate.month) + 1), b.startDate.day) - Date.UTC(a.startDate.year, (this.months.indexOf(a.startDate.month) + 1), a.startDate.day))
+						this.sorted = false;
+					}
+					break;
+
+				case 'end_date':
+					if (this.sorted == false)
+					{
+						this.tmp_json_rec.sort((a,b) => Date.UTC(a.endDate.year, (this.months.indexOf(a.endDate.month) + 1), a.endDate.day) - Date.UTC(b.endDate.year, (this.months.indexOf(b.endDate.month) + 1), b.endDate.day))
+						this.sorted = true;
+					}
+					else
+					{
+						this.tmp_json_rec.sort((a,b) => Date.UTC(b.endDate.year, (this.months.indexOf(b.endDate.month) + 1), b.endDate.day) - Date.UTC(a.endDate.year, (this.months.indexOf(a.endDate.month) + 1), a.endDate.day))
+						this.sorted = false;
+					}
+					break;
+				
 				default:
 					console('[*] Sort Type not recognized...');
 
@@ -1323,7 +1351,6 @@
 			set_today('end_');
 			
 			</script>
-
 			<script src="https://code.iconify.design/1/1.0.7/iconify.min.js" crossorigin='anonymous'></script>
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin='anonymous'>
 
