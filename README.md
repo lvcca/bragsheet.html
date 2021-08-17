@@ -18,7 +18,7 @@ With feedback, the export format can be adjusted to more accurately reflect the 
 </ul>
 
 
-![image](https://user-images.githubusercontent.com/49540886/126872013-0804e960-0e45-4a14-a022-783f7e115162.png)
+![image](https://user-images.githubusercontent.com/49540886/129809615-83aa8611-847a-4468-8ac3-7eb9b299e4b1.png)
 
 ![image](https://user-images.githubusercontent.com/49540886/126822935-7aaeafa2-d0a4-4d45-947c-7f16ef2fb3d0.png)
 
