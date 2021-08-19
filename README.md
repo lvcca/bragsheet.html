@@ -38,5 +38,5 @@ With feedback, the export format can be adjusted to more accurately reflect the 
 <ul>
 <li>Drag and drop import file</li>
 <li>Remove import button and include onload import button function when file loaded</li>
-<li>Implement Sorting in table</li>
+<li>Implement Smart sort by table position and clicked element</li>
 </ul>
