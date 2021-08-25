@@ -36,6 +36,7 @@ With feedback, the export format can be adjusted to more accurately reflect the 
 
 <H3>TO DOs</H3>
 <ul>
+<li>Convert used icons to base64, embed static base64 images in file, resolve icons from embedded static base64 images</li>
 <li>Drag and drop import file</li>
 <li>Remove import button and include onload import button function when file loaded</li>
 <li>Implement smart sort by table position and clicked element</li>
