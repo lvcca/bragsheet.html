@@ -1,4 +1,12 @@
 
+<!--
+Author: 	Mason Palma
+File:		bragsheet.html
+Purpose:	To assist sailors manage their record of accomplishments.
+
+Icons under creative commons license from Font Awesome; Font Awesome by Dave Gandy - http://fontawesome.io
+-->
+
 <!DOCTYPE html>
 <html>
 
@@ -969,476 +977,476 @@
 					}
 			}
 
-		function download(filename, text) 
-		{
-		    var element = document.createElement('a');
-		    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-		    element.setAttribute('download', filename);
+			function download(filename, text) 
+			{
+			    var element = document.createElement('a');
+			    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+			    element.setAttribute('download', filename);
 
-		    element.style.display = 'none';
-		    document.body.appendChild(element);
+			    element.style.display = 'none';
+			    document.body.appendChild(element);
 
-		    element.click();
+			    element.click();
 
-		    document.body.removeChild(element);
-		}
+			    document.body.removeChild(element);
+			}
 
-		function for_download_record()
-		{	
-			pop_admin();
-			string_output = '';
-			string_output = JSON.stringify({json_rec, json_admin});
-			console.log(string_output);
-			return this.string_output;
-		}
+			function for_download_record()
+			{	
+				pop_admin();
+				string_output = '';
+				string_output = JSON.stringify({json_rec, json_admin});
+				console.log(string_output);
+				return this.string_output;
+			}
 
-		function for_download_bragsheet(printby)
-		{
-			var tmp_0 = categories[0] + '\n';
-			var tmp_1 = categories[1] + '\n'; 
-			var tmp_2 = categories[2] + '\n'; 
-			var tmp_3 = categories[3] + '\n';
-			var tmp_4 = categories[4] + '\n';
-			var tmp_5 = categories[5] + '\n'; 
-			var tmp_6 = categories[6] + '\n'; 
-			var tmp_7 = categories[7] + '\n';
+			function for_download_bragsheet(printby)
+			{
+				var tmp_0 = categories[0] + '\n';
+				var tmp_1 = categories[1] + '\n'; 
+				var tmp_2 = categories[2] + '\n'; 
+				var tmp_3 = categories[3] + '\n';
+				var tmp_4 = categories[4] + '\n';
+				var tmp_5 = categories[5] + '\n'; 
+				var tmp_6 = categories[6] + '\n'; 
+				var tmp_7 = categories[7] + '\n';
 
-			let string_output = 
-			`Administrative Data:
+				let string_output = 
+				`Administrative Data:
 
-	a. Full Name : ${this.fullName}
-	b. Rate and warfare/qualification designators : ${this.designators}
-	c. SSN :
-	d. Branch : ${this.branch}
-	e. Date Reported : ${this.dateReported}
-	f. Ending date of last evaluation : ${this.lastEval}
-	g. Date of rate : ${this.dateOfRate}
-			`;
-			string_output += '\n'
-
-			/**
-			 * Assort by categories
-			 * */
-
-			if (printby == 'Category'){
-
-				var tmp_str = ''
-
-				for (let i = 0; i < json_rec.length; i++)
-				{
-				
-					let id = Object.keys(json_rec[i]);
-					let rec_ = json_rec[i];
-					let rec = rec_[id]
-
-					if (categories.indexOf(rec.Category) != -1)
-					{
-
-						if (categories.indexOf(rec.Category) == 0)
-						{
-							//Duties and Responsibilities
-							tmp_0 += `\t[${rec.startDate.day}${rec.startDate.month}${rec.startDate.year} - ${rec.endDate.day}${rec.endDate.month}${rec.endDate.year}]
-\t\t${rec.Content}
-							`;
-
-							tmp_0 += '\n'
-						}
-
-						if (categories.indexOf(rec.Category) == 1)
-						{
-							//Job Accomplishments and Initiative
-							tmp_1 += `\t[${rec.startDate.day}${rec.startDate.month}${rec.startDate.year} - ${rec.endDate.day}${rec.endDate.month}${rec.endDate.year}]
-\t\t${rec.Content}
-							`;
-
-							tmp_1 += '\n'
-						}
-
-						if (categories.indexOf(rec.Category) == 2)
-						{
-							//Supervision and Leadership
-							tmp_2 += `\t[${rec.startDate.day}${rec.startDate.month}${rec.startDate.year} - ${rec.endDate.day}${rec.endDate.month}${rec.endDate.year}]
-\t\t${rec.Content}
-							`;
-
-							tmp_2 += '\n'
-						}
-
-						if (categories.indexOf(rec.Category) == 3)
-						{
-							//Special Achievements
-							tmp_3 += `\t[${rec.startDate.day}${rec.startDate.month}${rec.startDate.year} - ${rec.endDate.day}${rec.endDate.month}${rec.endDate.year}]
-\t\t${rec.Content}
-							`;
-
-							tmp_3 += '\n'
-						}
-
-						if (categories.indexOf(rec.Category) == 4)
-						{
-							//Off-Duty Activities
-							tmp_4 += `\t[${rec.startDate.day}${rec.startDate.month}${rec.startDate.year} - ${rec.endDate.day}${rec.endDate.month}${rec.endDate.year}]
-\t\t${rec.Content}
-							`;
-
-							tmp_4 += '\n'
-						}
-
-						if (categories.indexOf(rec.Category) == 5)
-						{
-							//Collateral Duties
-							tmp_5 += `\t[${rec.startDate.day}${rec.startDate.month}${rec.startDate.year} - ${rec.endDate.day}${rec.endDate.month}${rec.endDate.year}]
-\t\t${rec.Content}
-							`;
-
-							tmp_5 += '\n'
-						}
-
-						if (categories.indexOf(rec.Category) == 6)
-						{
-							//Education (Navy, Personal)
-							tmp_6 += `\t[${rec.startDate.day}${rec.startDate.month}${rec.startDate.year} - ${rec.endDate.day}${rec.endDate.month}${rec.endDate.year}]
-\t\t${rec.Content}
-							`;
-
-							tmp_6 += '\n'
-						}
-
-						if (categories.indexOf(rec.Category) == 7)
-						{
-							//Qualifications
-							tmp_7 += `\t[${rec.startDate.day}${rec.startDate.month}${rec.startDate.year} - ${rec.endDate.day}${rec.endDate.month}${rec.endDate.year}]
-\t\t${rec.Content}
-							`;
-
-							tmp_7 += '\n'
-						}	
-					}  
-				}
+		a. Full Name : ${this.fullName}
+		b. Rate and warfare/qualification designators : ${this.designators}
+		c. SSN :
+		d. Branch : ${this.branch}
+		e. Date Reported : ${this.dateReported}
+		f. Ending date of last evaluation : ${this.lastEval}
+		g. Date of rate : ${this.dateOfRate}
+				`;
+				string_output += '\n'
 
 				/**
-				 * Place all organized output into single string
+				 * Assort by categories
 				 * */
 
-				tmp_str += tmp_0;
-				tmp_str += tmp_1;
-				tmp_str += tmp_2;
-				tmp_str += tmp_3;
-				tmp_str += tmp_4;
-				tmp_str += tmp_5;
-				tmp_str += tmp_6;
-				tmp_str += tmp_7;
-				string_output += tmp_str;
-			}
+				if (printby == 'Category'){
 
-			return string_output;
-		}
+					var tmp_str = ''
 
-		function edit_entry(record_id)
-		{
-			for (let i = 0; i <= document.getElementById('record_table').rows.length; i++)
-			{
-				if (document.getElementById('record_table').rows[i].accessKey == record_id)
-				{	
-					console.log(`index is : ${i-1}\nrecord_id is : ${record_id}`);
-
-					//get record with array number and id
-					var rec_ = json_rec[(i-1)];
-					var rec = rec_[record_id];
-					
-					//populate values with record
-					document.getElementById('start_day').value = rec.startDate.day;
-					document.getElementById('start_month').value = rec.startDate.month;
-					document.getElementById('start_year').value = rec.startDate.year;
-					document.getElementById('end_day').value = rec.endDate.day;
-					document.getElementById('end_month').value = rec.endDate.month;
-					document.getElementById('end_year').value = rec.endDate.year;
-					document.getElementById('impact').selectedIndex = impact.indexOf(rec.impact);
-					document.getElementById('category').selectedIndex = categories.indexOf(rec.Category);
-					document.getElementById('content_pane').value = rec.Content;
-
-					//remove record from table and lists;
-					document.getElementById('record_table').deleteRow(i);
-					records.pop(record_id);
-					json_rec.splice(json_rec.indexOf(rec_), 1);
-					total_rows--;
-					get_counters();	
-
-					rec_ = null;
-					rec = null;
-
-					return;
-				}
-			}
-
-			return;
-		}
-
-		function get_admin()
-		{
-
-			/**
-			 * 
-			 * 	a. Full Name :
-			 *	b. Rate and warfare/qualification designators :
-			 *	d. Branch :
-			 *	e. Date Reported :
-			 *	f. Ending date of last evaluation :
-			 *	g. Date of rate :
-			 * 
-			 * */
-			 
-			let fullName_ = prompt('Enter your full name.', 'Last, First M');
-
-			this.fullName = fullName_;
-			
-			if (this.fullName != null && this.fullName != "Last, First M")
-			{
-				this.designators = prompt('Enter rate and warfare/qualification designators.', 'Ex. IT2(IW)');
-
-				if (this.designators != null && this.designators != 'Ex. IT2(IW)')
-				{
-					this.branch = prompt('Enter branch.', 'USN');
-
-					if (this.branch != null)
+					for (let i = 0; i < json_rec.length; i++)
 					{
-						this.dateReported = prompt('Enter date reported.', 'DDMMYYYY');
+					
+						let id = Object.keys(json_rec[i]);
+						let rec_ = json_rec[i];
+						let rec = rec_[id]
 
-						if (this.dateReported != null && this.dateReported != 'DDMMYYYY')
+						if (categories.indexOf(rec.Category) != -1)
 						{
-							this.lastEval = prompt('Enter ending date of last evaluation.', 'DDMMYYYY');
 
-							if (this.lastEval != null && this.lastEval != 'DDMMYYYY')
+							if (categories.indexOf(rec.Category) == 0)
 							{
-								this.dateOfRate = prompt('Enter date of rate.', 'DDMMYYYY');
+								//Duties and Responsibilities
+								tmp_0 += `\t[${rec.startDate.day}${rec.startDate.month}${rec.startDate.year} - ${rec.endDate.day}${rec.endDate.month}${rec.endDate.year}]
+	\t\t${rec.Content}
+								`;
 
-								if (this.dateOfRate == 'DDMMYYYY')
+								tmp_0 += '\n'
+							}
+
+							if (categories.indexOf(rec.Category) == 1)
+							{
+								//Job Accomplishments and Initiative
+								tmp_1 += `\t[${rec.startDate.day}${rec.startDate.month}${rec.startDate.year} - ${rec.endDate.day}${rec.endDate.month}${rec.endDate.year}]
+	\t\t${rec.Content}
+								`;
+
+								tmp_1 += '\n'
+							}
+
+							if (categories.indexOf(rec.Category) == 2)
+							{
+								//Supervision and Leadership
+								tmp_2 += `\t[${rec.startDate.day}${rec.startDate.month}${rec.startDate.year} - ${rec.endDate.day}${rec.endDate.month}${rec.endDate.year}]
+	\t\t${rec.Content}
+								`;
+
+								tmp_2 += '\n'
+							}
+
+							if (categories.indexOf(rec.Category) == 3)
+							{
+								//Special Achievements
+								tmp_3 += `\t[${rec.startDate.day}${rec.startDate.month}${rec.startDate.year} - ${rec.endDate.day}${rec.endDate.month}${rec.endDate.year}]
+	\t\t${rec.Content}
+								`;
+
+								tmp_3 += '\n'
+							}
+
+							if (categories.indexOf(rec.Category) == 4)
+							{
+								//Off-Duty Activities
+								tmp_4 += `\t[${rec.startDate.day}${rec.startDate.month}${rec.startDate.year} - ${rec.endDate.day}${rec.endDate.month}${rec.endDate.year}]
+	\t\t${rec.Content}
+								`;
+
+								tmp_4 += '\n'
+							}
+
+							if (categories.indexOf(rec.Category) == 5)
+							{
+								//Collateral Duties
+								tmp_5 += `\t[${rec.startDate.day}${rec.startDate.month}${rec.startDate.year} - ${rec.endDate.day}${rec.endDate.month}${rec.endDate.year}]
+	\t\t${rec.Content}
+								`;
+
+								tmp_5 += '\n'
+							}
+
+							if (categories.indexOf(rec.Category) == 6)
+							{
+								//Education (Navy, Personal)
+								tmp_6 += `\t[${rec.startDate.day}${rec.startDate.month}${rec.startDate.year} - ${rec.endDate.day}${rec.endDate.month}${rec.endDate.year}]
+	\t\t${rec.Content}
+								`;
+
+								tmp_6 += '\n'
+							}
+
+							if (categories.indexOf(rec.Category) == 7)
+							{
+								//Qualifications
+								tmp_7 += `\t[${rec.startDate.day}${rec.startDate.month}${rec.startDate.year} - ${rec.endDate.day}${rec.endDate.month}${rec.endDate.year}]
+	\t\t${rec.Content}
+								`;
+
+								tmp_7 += '\n'
+							}	
+						}  
+					}
+
+					/**
+					 * Place all organized output into single string
+					 * */
+
+					tmp_str += tmp_0;
+					tmp_str += tmp_1;
+					tmp_str += tmp_2;
+					tmp_str += tmp_3;
+					tmp_str += tmp_4;
+					tmp_str += tmp_5;
+					tmp_str += tmp_6;
+					tmp_str += tmp_7;
+					string_output += tmp_str;
+				}
+
+				return string_output;
+			}
+
+			function edit_entry(record_id)
+			{
+				for (let i = 0; i <= document.getElementById('record_table').rows.length; i++)
+				{
+					if (document.getElementById('record_table').rows[i].accessKey == record_id)
+					{	
+						console.log(`index is : ${i-1}\nrecord_id is : ${record_id}`);
+
+						//get record with array number and id
+						var rec_ = json_rec[(i-1)];
+						var rec = rec_[record_id];
+						
+						//populate values with record
+						document.getElementById('start_day').value = rec.startDate.day;
+						document.getElementById('start_month').value = rec.startDate.month;
+						document.getElementById('start_year').value = rec.startDate.year;
+						document.getElementById('end_day').value = rec.endDate.day;
+						document.getElementById('end_month').value = rec.endDate.month;
+						document.getElementById('end_year').value = rec.endDate.year;
+						document.getElementById('impact').selectedIndex = impact.indexOf(rec.impact);
+						document.getElementById('category').selectedIndex = categories.indexOf(rec.Category);
+						document.getElementById('content_pane').value = rec.Content;
+
+						//remove record from table and lists;
+						document.getElementById('record_table').deleteRow(i);
+						records.pop(record_id);
+						json_rec.splice(json_rec.indexOf(rec_), 1);
+						total_rows--;
+						get_counters();	
+
+						rec_ = null;
+						rec = null;
+
+						return;
+					}
+				}
+
+				return;
+			}
+
+			function get_admin()
+			{
+
+				/**
+				 * 
+				 * 	a. Full Name :
+				 *	b. Rate and warfare/qualification designators :
+				 *	d. Branch :
+				 *	e. Date Reported :
+				 *	f. Ending date of last evaluation :
+				 *	g. Date of rate :
+				 * 
+				 * */
+				 
+				let fullName_ = prompt('Enter your full name.', 'Last, First M');
+
+				this.fullName = fullName_;
+				
+				if (this.fullName != null && this.fullName != "Last, First M")
+				{
+					this.designators = prompt('Enter rate and warfare/qualification designators.', 'Ex. IT2(IW)');
+
+					if (this.designators != null && this.designators != 'Ex. IT2(IW)')
+					{
+						this.branch = prompt('Enter branch.', 'USN');
+
+						if (this.branch != null)
+						{
+							this.dateReported = prompt('Enter date reported.', 'DDMMYYYY');
+
+							if (this.dateReported != null && this.dateReported != 'DDMMYYYY')
+							{
+								this.lastEval = prompt('Enter ending date of last evaluation.', 'DDMMYYYY');
+
+								if (this.lastEval != null && this.lastEval != 'DDMMYYYY')
 								{
-									this.dateOfRate == null;
+									this.dateOfRate = prompt('Enter date of rate.', 'DDMMYYYY');
+
+									if (this.dateOfRate == 'DDMMYYYY')
+									{
+										this.dateOfRate == null;
+									}
 								}
 							}
 						}
 					}
 				}
+
+				pop_admin();
+			
 			}
 
-			pop_admin();
-		
-		}
+			function pop_admin()
+			{
 
-		function pop_admin()
-		{
+				this.json_admin = {"adminData" : {"fullName" : this.fullName, "designators" : this.designators, "branch" : this.branch, "dateReported" : this.dateReported, "lastEval" : this.lastEval, "dateOfRate" : this.dateOfRate }};
 
-			this.json_admin = {"adminData" : {"fullName" : this.fullName, "designators" : this.designators, "branch" : this.branch, "dateReported" : this.dateReported, "lastEval" : this.lastEval, "dateOfRate" : this.dateOfRate }};
+				console.log(JSON.parse(JSON.stringify(json_admin)));
 
-			console.log(JSON.parse(JSON.stringify(json_admin)));
+			}
 
-		}
+			function import_admin(imported_admin_rec)
+			{
+				if (imported_admin_rec.fullName != null)
+				{ 
+					this.fullName = imported_admin_rec.fullName;
+				}	
+				if (imported_admin_rec.designators != null)
+				{
+					this.designators = imported_admin_rec.designators;
+				}
 
-		function import_admin(imported_admin_rec)
-		{
-			if (imported_admin_rec.fullName != null)
-			{ 
-				this.fullName = imported_admin_rec.fullName;
+				if (imported_admin_rec.branch != null)
+				{
+					this.branch = imported_admin_rec.branch;
+				}
+
+				if (imported_admin_rec.dateReported != null)
+				{
+					this.dateReported = imported_admin_rec.dateReported;
+				}
+
+				if (imported_admin_rec.lastEval != null)
+				{
+					this.lastEval = imported_admin_rec.lastEval;
+				}
+
+				if (imported_admin_rec.dateOfRate != null)
+				{
+					this.dateOfRate = imported_admin_rec.dateOfRate;
+				}
+
+			}
+
+			function get_counters()
+			{	
+				let count_0 = 0;
+				let count_1 = 0;
+				let count_2 = 0;
+				let count_3 = 0;
+				let count_4 = 0;
+				let count_5 = 0;
+				let count_6 = 0;
+				let count_7 = 0;
+
+				for (let i = 0; i < json_rec.length; i++)
+				{
+					let count = categories.indexOf(json_rec[i][Object.keys(json_rec[i])].Category)
+
+					if(count == 0)
+						count_0++;
+
+					else if (count == 1)
+						count_1++;
+
+					else if (count == 2)
+						count_2++;
+
+					else if (count == 3)
+						count_3++;
+
+					else if (count == 4)
+						count_4++;
+
+					else if (count == 5)
+						count_5++;
+
+					else if (count == 6)
+						count_6++;
+
+					else if (count == 7)
+						count_7++;
+
+				}
+				document.getElementById('counter_0').textContent = count_0;
+				document.getElementById('counter_1').textContent = count_1;
+				document.getElementById('counter_2').textContent = count_2;
+				document.getElementById('counter_3').textContent = count_3;
+				document.getElementById('counter_4').textContent = count_4;
+				document.getElementById('counter_5').textContent = count_5;
+				document.getElementById('counter_6').textContent = count_6;
+				document.getElementById('counter_7').textContent = count_7;
+			}
+
+			function do_sort(sort_type)
+			{
+
+				this.tmp_json_rec = [];
+
+				for (let i = 0; i < this.json_rec.length; i++)
+				{
+					this.tmp_json_rec.push(this.json_rec[i][Object.keys(json_rec[i])]);
+				}
+				
+				console.log("Sort by: " + sort_type)
+
+				switch(sort_type)
+				{
+
+					case 'impact':
+						if (this.sorted == false)
+						{
+							this.tmp_json_rec.sort((a,b) => impact.indexOf(a.impact) - impact.indexOf(b.impact))
+							this.sorted = true;
+						}
+						else
+						{
+							this.tmp_json_rec.sort((a,b) => impact.indexOf(b.impact) - impact.indexOf(a.impact))
+							this.sorted = false;
+						}
+						break;
+
+					case 'category':
+						if (this.sorted == false)
+						{
+							this.tmp_json_rec.sort((a,b) => categories.indexOf(a.Category) - categories.indexOf(b.Category))
+							this.sorted = true;
+						}
+						else
+						{
+							this.tmp_json_rec.sort((a,b) => categories.indexOf(b.Category) - categories.indexOf(a.Category))
+							this.sorted = false;
+						}
+						break;
+
+					case 'content':
+						if (this.sorted == false)
+						{
+							this.tmp_json_rec.sort((a,b) => a.Content.length - b.Content.length)
+							this.sorted = true;
+						}
+						else
+						{
+							this.tmp_json_rec.sort((a,b) => b.Content.length - a.Content.length)
+							this.sorted = false;
+						}
+						break;
+					
+					case 'start_date':
+						if (this.sorted == false)
+						{
+							this.tmp_json_rec.sort((a,b) => Date.UTC(a.startDate.year, (this.months.indexOf(a.startDate.month) + 1), a.startDate.day) - Date.UTC(b.startDate.year, (this.months.indexOf(b.startDate.month) + 1), b.startDate.day))
+							this.sorted = true;
+						}
+						else
+						{
+							this.tmp_json_rec.sort((a,b) => Date.UTC(b.startDate.year, (this.months.indexOf(b.startDate.month) + 1), b.startDate.day) - Date.UTC(a.startDate.year, (this.months.indexOf(a.startDate.month) + 1), a.startDate.day))
+							this.sorted = false;
+						}
+						break;
+
+					case 'end_date':
+						if (this.sorted == false)
+						{
+							this.tmp_json_rec.sort((a,b) => Date.UTC(a.endDate.year, (this.months.indexOf(a.endDate.month) + 1), a.endDate.day) - Date.UTC(b.endDate.year, (this.months.indexOf(b.endDate.month) + 1), b.endDate.day))
+							this.sorted = true;
+						}
+						else
+						{
+							this.tmp_json_rec.sort((a,b) => Date.UTC(b.endDate.year, (this.months.indexOf(b.endDate.month) + 1), b.endDate.day) - Date.UTC(a.endDate.year, (this.months.indexOf(a.endDate.month) + 1), a.endDate.day))
+							this.sorted = false;
+						}
+						break;
+					
+					default:
+						console('[*] Sort Type not recognized...');
+
+				}
+				
+				let len = this.json_rec.length;
+
+				for (let i = (len-1); i > -1; i--)
+				{
+					remove_entry(Object.keys(this.json_rec[i]));
+					console.log("removed " + i);
+				}
+
+				
+				for (let i = 0; i < this.tmp_json_rec.length; i++)
+				{
+
+					document.getElementById('start_day').value = this.tmp_json_rec[i].startDate.day;
+					document.getElementById('start_month').value = this.tmp_json_rec[i].startDate.month;
+					document.getElementById('start_year').value = this.tmp_json_rec[i].startDate.year;
+
+					document.getElementById('end_day').value = this.tmp_json_rec[i].endDate.day;
+					document.getElementById('end_month').value = this.tmp_json_rec[i].endDate.month;
+					document.getElementById('end_year').value = this.tmp_json_rec[i].endDate.year;							
+					
+					document.getElementById('impact').selectedIndex = impact.indexOf(this.tmp_json_rec[i].impact);
+					document.getElementById('category').selectedIndex = categories.indexOf(this.tmp_json_rec[i].Category);
+					document.getElementById('content_pane').value = this.tmp_json_rec[i].Content;
+					
+					create_record();
+				}
+				
 			}	
-			if (imported_admin_rec.designators != null)
-			{
-				this.designators = imported_admin_rec.designators;
-			}
+			//end function def
 
-			if (imported_admin_rec.branch != null)
-			{
-				this.branch = imported_admin_rec.branch;
-			}
-
-			if (imported_admin_rec.dateReported != null)
-			{
-				this.dateReported = imported_admin_rec.dateReported;
-			}
-
-			if (imported_admin_rec.lastEval != null)
-			{
-				this.lastEval = imported_admin_rec.lastEval;
-			}
-
-			if (imported_admin_rec.dateOfRate != null)
-			{
-				this.dateOfRate = imported_admin_rec.dateOfRate;
-			}
-
-		}
-
-		function get_counters()
-		{	
-			let count_0 = 0;
-			let count_1 = 0;
-			let count_2 = 0;
-			let count_3 = 0;
-			let count_4 = 0;
-			let count_5 = 0;
-			let count_6 = 0;
-			let count_7 = 0;
-
-			for (let i = 0; i < json_rec.length; i++)
-			{
-				let count = categories.indexOf(json_rec[i][Object.keys(json_rec[i])].Category)
-
-				if(count == 0)
-					count_0++;
-
-				else if (count == 1)
-					count_1++;
-
-				else if (count == 2)
-					count_2++;
-
-				else if (count == 3)
-					count_3++;
-
-				else if (count == 4)
-					count_4++;
-
-				else if (count == 5)
-					count_5++;
-
-				else if (count == 6)
-					count_6++;
-
-				else if (count == 7)
-					count_7++;
-
-			}
-			document.getElementById('counter_0').textContent = count_0;
-			document.getElementById('counter_1').textContent = count_1;
-			document.getElementById('counter_2').textContent = count_2;
-			document.getElementById('counter_3').textContent = count_3;
-			document.getElementById('counter_4').textContent = count_4;
-			document.getElementById('counter_5').textContent = count_5;
-			document.getElementById('counter_6').textContent = count_6;
-			document.getElementById('counter_7').textContent = count_7;
-		}
-
-		function do_sort(sort_type)
-		{
-
-			this.tmp_json_rec = [];
-
-			for (let i = 0; i < this.json_rec.length; i++)
-			{
-				this.tmp_json_rec.push(this.json_rec[i][Object.keys(json_rec[i])]);
-			}
-			
-			console.log("Sort by: " + sort_type)
-
-			switch(sort_type)
-			{
-
-				case 'impact':
-					if (this.sorted == false)
-					{
-						this.tmp_json_rec.sort((a,b) => impact.indexOf(a.impact) - impact.indexOf(b.impact))
-						this.sorted = true;
-					}
-					else
-					{
-						this.tmp_json_rec.sort((a,b) => impact.indexOf(b.impact) - impact.indexOf(a.impact))
-						this.sorted = false;
-					}
-					break;
-
-				case 'category':
-					if (this.sorted == false)
-					{
-						this.tmp_json_rec.sort((a,b) => categories.indexOf(a.Category) - categories.indexOf(b.Category))
-						this.sorted = true;
-					}
-					else
-					{
-						this.tmp_json_rec.sort((a,b) => categories.indexOf(b.Category) - categories.indexOf(a.Category))
-						this.sorted = false;
-					}
-					break;
-
-				case 'content':
-					if (this.sorted == false)
-					{
-						this.tmp_json_rec.sort((a,b) => a.Content.length - b.Content.length)
-						this.sorted = true;
-					}
-					else
-					{
-						this.tmp_json_rec.sort((a,b) => b.Content.length - a.Content.length)
-						this.sorted = false;
-					}
-					break;
-				
-				case 'start_date':
-					if (this.sorted == false)
-					{
-						this.tmp_json_rec.sort((a,b) => Date.UTC(a.startDate.year, (this.months.indexOf(a.startDate.month) + 1), a.startDate.day) - Date.UTC(b.startDate.year, (this.months.indexOf(b.startDate.month) + 1), b.startDate.day))
-						this.sorted = true;
-					}
-					else
-					{
-						this.tmp_json_rec.sort((a,b) => Date.UTC(b.startDate.year, (this.months.indexOf(b.startDate.month) + 1), b.startDate.day) - Date.UTC(a.startDate.year, (this.months.indexOf(a.startDate.month) + 1), a.startDate.day))
-						this.sorted = false;
-					}
-					break;
-
-				case 'end_date':
-					if (this.sorted == false)
-					{
-						this.tmp_json_rec.sort((a,b) => Date.UTC(a.endDate.year, (this.months.indexOf(a.endDate.month) + 1), a.endDate.day) - Date.UTC(b.endDate.year, (this.months.indexOf(b.endDate.month) + 1), b.endDate.day))
-						this.sorted = true;
-					}
-					else
-					{
-						this.tmp_json_rec.sort((a,b) => Date.UTC(b.endDate.year, (this.months.indexOf(b.endDate.month) + 1), b.endDate.day) - Date.UTC(a.endDate.year, (this.months.indexOf(a.endDate.month) + 1), a.endDate.day))
-						this.sorted = false;
-					}
-					break;
-				
-				default:
-					console('[*] Sort Type not recognized...');
-
-			}
-			
-			let len = this.json_rec.length;
-
-			for (let i = (len-1); i > -1; i--)
-			{
-				remove_entry(Object.keys(this.json_rec[i]));
-				console.log("removed " + i);
-			}
-
-			
-			for (let i = 0; i < this.tmp_json_rec.length; i++)
-			{
-
-				document.getElementById('start_day').value = this.tmp_json_rec[i].startDate.day;
-				document.getElementById('start_month').value = this.tmp_json_rec[i].startDate.month;
-				document.getElementById('start_year').value = this.tmp_json_rec[i].startDate.year;
-
-				document.getElementById('end_day').value = this.tmp_json_rec[i].endDate.day;
-				document.getElementById('end_month').value = this.tmp_json_rec[i].endDate.month;
-				document.getElementById('end_year').value = this.tmp_json_rec[i].endDate.year;							
-				
-				document.getElementById('impact').selectedIndex = impact.indexOf(this.tmp_json_rec[i].impact);
-				document.getElementById('category').selectedIndex = categories.indexOf(this.tmp_json_rec[i].Category);
-				document.getElementById('content_pane').value = this.tmp_json_rec[i].Content;
-				
-				create_record();
-			}
-			
-		}	
-		//end function def
-
-		pop_date("start_");
-		pop_date("end_");
-		pop_impact();
-		pop_category();
-		set_today('start_');
-		set_today('end_');
+			pop_date("start_");
+			pop_date("end_");
+			pop_impact();
+			pop_category();
+			set_today('start_');
+			set_today('end_');
 			
 			</script>
 		</div>
