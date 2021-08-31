@@ -31,8 +31,8 @@ With feedback, the export format can be adjusted to more accurately reflect the 
 <li>Bragsheet.txt : Formatted txt file with stored data.</li>
 </ul>
 
-![image](https://user-images.githubusercontent.com/49540886/129809693-c12488d3-efba-4182-b99d-f1b6a179d924.png)
-![image](https://user-images.githubusercontent.com/49540886/129809753-3317505a-cd1f-46e5-8310-80745724d770.png)
+![image](https://user-images.githubusercontent.com/49540886/131514950-b90db826-227c-42b6-8961-dcaf922e6f3c.png)
+![image](https://user-images.githubusercontent.com/49540886/131514998-d7477d7c-09d7-4113-a82a-03c7b6e62e24.png)
 
 <H3>TO DOs</H3>
 <ul>
