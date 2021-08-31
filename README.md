@@ -20,9 +20,9 @@ With feedback, the export format can be adjusted to more accurately reflect the 
 
 ![image](https://user-images.githubusercontent.com/49540886/131514510-aa32bd52-dbe3-43ab-ac6a-e55bb72f74f6.png)
 
-![image](https://user-images.githubusercontent.com/49540886/129809673-47325333-1d3e-4f20-8de8-0540ff705be1.png)
+![image](https://user-images.githubusercontent.com/49540886/131514822-6915e932-1c0e-43d9-a3fa-d552ea4c5ac0.png)
 
-![image](https://user-images.githubusercontent.com/49540886/129809719-89b0c889-8290-4942-9f4b-5d3e184389b2.png)
+![image](https://user-images.githubusercontent.com/49540886/131514873-f2a646c7-f6df-4820-9e3b-0e942a8b79ea.png)
 
 
 <H3>Files</H3>
