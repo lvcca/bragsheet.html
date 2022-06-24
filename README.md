@@ -13,10 +13,10 @@ With feedback, the export format can be adjusted to more accurately reflect the 
 </ul>
 
 <H3>Install with Curl && Run for Windows, MacOS, and Linux with firefox</H3>
-<ul>
-<li><b>curl https://raw.githubusercontent.com/lvcca/bragsheet.html/main/bragsheet.html -o bragsheet.html && bragsheet.html || open bragsheet.html || firefox bragsheet.html</b></li>
-</ul>
 
+```console
+curl https://raw.githubusercontent.com/lvcca/bragsheet.html/main/bragsheet.html -o bragsheet.html && bragsheet.html || open bragsheet.html || firefox bragsheet.html
+```
 
 ![image](https://user-images.githubusercontent.com/49540886/131514510-aa32bd52-dbe3-43ab-ac6a-e55bb72f74f6.png)
 
